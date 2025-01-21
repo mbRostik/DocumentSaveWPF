@@ -5,6 +5,26 @@
     {
       "AbsoluteMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|c:\\users\\utenteprova2\\desktop\\myproject\\documentsavingproject\\documentsavingproject\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|solutionrelative:documentsavingproject\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|c:\\users\\utenteprova2\\desktop\\myproject\\documentsavingproject\\documentsavingproject\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|solutionrelative:documentsavingproject\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFC6C572-6EBF-4709-B848-D4AA55A94B28}|DAL\\DAL.csproj|c:\\users\\utenteprova2\\desktop\\myproject\\documentsavingproject\\dal\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFC6C572-6EBF-4709-B848-D4AA55A94B28}|DAL\\DAL.csproj|solutionrelative:dal\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|c:\\users\\utenteprova2\\desktop\\myproject\\documentsavingproject\\documentsavingproject\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|solutionrelative:documentsavingproject\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFC6C572-6EBF-4709-B848-D4AA55A94B28}|DAL\\DAL.csproj|c:\\users\\utenteprova2\\desktop\\myproject\\documentsavingproject\\dal\\entityconfigurations\\documento_upload_dipendente_configuration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFC6C572-6EBF-4709-B848-D4AA55A94B28}|DAL\\DAL.csproj|solutionrelative:dal\\entityconfigurations\\documento_upload_dipendente_configuration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFC6C572-6EBF-4709-B848-D4AA55A94B28}|DAL\\DAL.csproj|c:\\users\\utenteprova2\\desktop\\myproject\\documentsavingproject\\dal\\entityconfigurations\\anagdip_configuration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFC6C572-6EBF-4709-B848-D4AA55A94B28}|DAL\\DAL.csproj|solutionrelative:dal\\entityconfigurations\\anagdip_configuration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,15 +46,79 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DocumentSavingProject\\App.xaml.cs",
+              "RelativeDocumentMoniker": "DocumentSavingProject\\App.xaml.cs",
+              "ToolTip": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DocumentSavingProject\\App.xaml.cs",
+              "RelativeToolTip": "DocumentSavingProject\\App.xaml.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAqwCYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-21T12:01:06.717Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DOCUMENTO_UPLOAD_DIPENDENTE_Configuration.cs",
+              "DocumentMoniker": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DAL\\EntityConfigurations\\DOCUMENTO_UPLOAD_DIPENDENTE_Configuration.cs",
+              "RelativeDocumentMoniker": "DAL\\EntityConfigurations\\DOCUMENTO_UPLOAD_DIPENDENTE_Configuration.cs",
+              "ToolTip": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DAL\\EntityConfigurations\\DOCUMENTO_UPLOAD_DIPENDENTE_Configuration.cs",
+              "RelativeToolTip": "DAL\\EntityConfigurations\\DOCUMENTO_UPLOAD_DIPENDENTE_Configuration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-21T11:50:21.461Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ANAGDIP_Configuration.cs",
+              "DocumentMoniker": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DAL\\EntityConfigurations\\ANAGDIP_Configuration.cs",
+              "RelativeDocumentMoniker": "DAL\\EntityConfigurations\\ANAGDIP_Configuration.cs",
+              "ToolTip": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DAL\\EntityConfigurations\\ANAGDIP_Configuration.cs",
+              "RelativeToolTip": "DAL\\EntityConfigurations\\ANAGDIP_Configuration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-21T11:48:53.121Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DataBaseContext.cs",
+              "DocumentMoniker": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DAL\\DataBaseContext.cs",
+              "RelativeDocumentMoniker": "DAL\\DataBaseContext.cs",
+              "ToolTip": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DAL\\DataBaseContext.cs",
+              "RelativeToolTip": "DAL\\DataBaseContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-21T11:11:58.048Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DocumentSavingProject\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "DocumentSavingProject\\MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DocumentSavingProject\\MainWindow.xaml.cs",
               "RelativeToolTip": "DocumentSavingProject\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-21T11:06:39.056Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DocumentSavingProject\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "DocumentSavingProject\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DocumentSavingProject\\MainWindow.xaml",
+              "RelativeToolTip": "DocumentSavingProject\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-01-21T11:06:45.664Z",
               "EditorCaption": ""
             }
           ]
