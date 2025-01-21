@@ -8,6 +8,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DocumentSavingProject.View;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace DocumentSavingProject
 {
@@ -16,9 +18,18 @@ namespace DocumentSavingProject
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        private readonly IServiceProvider _serviceProvider;
+
+        public MainWindow(IServiceProvider serviceProvider)
         {
             InitializeComponent();
+            _serviceProvider = serviceProvider;
+        }
+
+        private void OpenAddDatabaseView(object sender, RoutedEventArgs e)
+        {
+            var addDatabaseView = _serviceProvider.GetRequiredService<DBConnectionView>();
+            addDatabaseView.Show();
         }
     }
 }

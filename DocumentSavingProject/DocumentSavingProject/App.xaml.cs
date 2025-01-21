@@ -1,7 +1,10 @@
 ﻿using System.Configuration;
 using System.Data;
 using System.Windows;
+using BLL.Managers;
 using DAL;
+using DocumentSavingProject.View;
+using DocumentSavingProject.ViewModel;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -15,27 +18,27 @@ namespace DocumentSavingProject
     {
         private IHost _host;
 
-        protected override void OnStartup(StartupEventArgs e)
+        private void OnStartup(object sender, StartupEventArgs e)
         {
             _host = Host.CreateDefaultBuilder()
-              .ConfigureServices((hostBuilderContext, serviceCollection) =>
-              {
-                  serviceCollection.AddDbContext<DataBaseContext>(options =>
-                  {
-                      options.UseSqlServer("");
-                  }, ServiceLifetime.Singleton);
-                  //serviceCollection.AddSingleton<MainWindow>();
+                .ConfigureServices((hostBuilderContext, serviceCollection) =>
+                {
+                    serviceCollection.AddDbContext<DataBaseContext>(options =>
+                    {
+                        options.UseSqlServer(ConnectionTester.CurrentDbContextConnection);
+                    }, ServiceLifetime.Scoped);
 
-
-              })
-              .Build();
+                    serviceCollection.AddSingleton<MainWindow>();
+                    serviceCollection.AddTransient<DBConnectionView>();
+                    serviceCollection.AddTransient<AddDatabaseViewModel>();
+                })
+                .Build();
 
             _host.Start();
 
-            //MainWindow = _host.Services.GetRequiredService<MainWindow>();
-            //MainWindow.Show();
-
-            base.OnStartup(e);
+            var mainWindow = _host.Services.GetRequiredService<MainWindow>();
+            MainWindow = mainWindow;
+            mainWindow.Show();
         }
 
         protected override async void OnExit(ExitEventArgs e)
@@ -48,7 +51,6 @@ namespace DocumentSavingProject
 
             base.OnExit(e);
         }
-
     }
 
 }

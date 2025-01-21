@@ -15,15 +15,6 @@ namespace DAL.EntityConfigurations
         {
             builder.HasKey(cp => new { cp.ID, cp.DIPENDENTE });
 
-            builder.HasOne(x => x.Document)
-                .WithMany(x => x.DOCUMENTO_UPLOAD_DIPENDENTEs)
-                .HasForeignKey(x => x.ID)
-                .OnDelete(DeleteBehavior.NoAction);
-
-            builder.HasOne(x => x.Anag)
-                .WithMany(x => x.DOCUMENTO_UPLOAD_DIPENDENTEs)
-                .HasForeignKey(x => x.DIPENDENTE)
-                .OnDelete(DeleteBehavior.NoAction);
         }
     }
 }

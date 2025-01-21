@@ -1,0 +1,16 @@
+C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\BLL\bin\Debug\net9.0\BLL.deps.json
+C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\BLL\bin\Debug\net9.0\BLL.dll
+C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\BLL\bin\Debug\net9.0\BLL.pdb
+C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\BLL\bin\Debug\net9.0\DAL.dll
+C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\BLL\bin\Debug\net9.0\DAL.pdb
+C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\BLL\obj\Debug\net9.0\BLL.csproj.AssemblyReference.cache
+C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\BLL\obj\Debug\net9.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\BLL\obj\Debug\net9.0\BLL.AssemblyInfoInputs.cache
+C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\BLL\obj\Debug\net9.0\BLL.AssemblyInfo.cs
+C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\BLL\obj\Debug\net9.0\BLL.csproj.CoreCompileInputs.cache
+C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\BLL\obj\Debug\net9.0\BLL.sourcelink.json
+C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\BLL\obj\Debug\net9.0\BLL.csproj.Up2Date
+C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\BLL\obj\Debug\net9.0\BLL.dll
+C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\BLL\obj\Debug\net9.0\refint\BLL.dll
+C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\BLL\obj\Debug\net9.0\BLL.pdb
+C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\BLL\obj\Debug\net9.0\ref\BLL.dll

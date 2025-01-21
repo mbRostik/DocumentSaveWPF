@@ -20,6 +20,9 @@ namespace DAL
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(DataBaseContext).Assembly);
+            modelBuilder.Entity<ANAGDIP>().ToTable("ANAGDIP"); 
+            modelBuilder.Entity<DOCUMENTO_UPLOAD>().ToTable("DOCUMENTO_UPLOAD");
+            modelBuilder.Entity<DOCUMENTO_UPLOAD_DIPENDENTE>().ToTable("DOCUMENTO_UPLOAD_DIPENDENTE");
             base.OnModelCreating(modelBuilder);
         }
     }

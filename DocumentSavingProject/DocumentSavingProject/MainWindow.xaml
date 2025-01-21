@@ -6,5 +6,7 @@
         xmlns:local="clr-namespace:DocumentSavingProject"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid/>
+    <Grid>
+        <Button Content="Open Add Database View" VerticalAlignment="Center" HorizontalAlignment="Center" Click="OpenAddDatabaseView"/>
+    </Grid>
 </Window>

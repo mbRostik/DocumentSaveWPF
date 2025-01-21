@@ -11,7 +11,5 @@ namespace DAL.Models
         public int ID { get; set; }
         public int DIPENDENTE { get; set; }
 
-        public virtual ANAGDIP Anag { get; set; }
-        public virtual DOCUMENTO_UPLOAD Document { get; set; }
     }
 }
