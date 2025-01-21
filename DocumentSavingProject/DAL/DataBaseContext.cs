@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DAL.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace DAL
@@ -11,16 +12,15 @@ namespace DAL
     {
         public DataBaseContext(DbContextOptions options) : base(options) { }
 
-        //public DbSet<Notification> Notifications { get; set; }
+        public DbSet<ANAGDIP> ANAGDIPs { get; set; }
+        public DbSet<DOCUMENTO_UPLOAD> DOCUMENTO_UPLOADs { get; set; }
 
-        //public DbSet<User> Users { get; set; }
+        public DbSet<DOCUMENTO_UPLOAD_DIPENDENTE> DOCUMENTO_UPLOAD_DIPENDENTEs { get; set; }
 
-        //public DbSet<NotificationType> NotificationTypes { get; set; }
-
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.ApplyConfigurationsFromAssembly(typeof(NotificationDbContext).Assembly);
-        //    base.OnModelCreating(modelBuilder);
-        //}
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(DataBaseContext).Assembly);
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
