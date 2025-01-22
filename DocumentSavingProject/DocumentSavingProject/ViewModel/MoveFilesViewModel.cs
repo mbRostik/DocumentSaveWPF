@@ -187,11 +187,11 @@ namespace DocumentSavingProject.ViewModel
                     try
                     {
                         const string query = @"
-                            SELECT PROGRESSIVO, ENTE 
+                            SELECT PROGRESSIVO, ENTE, NOME, COGNOME
                             FROM ANAGDIP 
                             WHERE COGNOME = @Name";
 
-                        var results = (await connection.QueryAsync<(int PROGRESSIVO, string ENTE)>(query,
+                        var results = (await connection.QueryAsync<(int PROGRESSIVO, string ENTE, string NOME, string COGNOME)>(query,
                                         new { Name = fileDetails.Name }, transaction)).ToList();
 
                         if (results.Count == 0 || results.Count > 1)
@@ -206,6 +206,7 @@ namespace DocumentSavingProject.ViewModel
                     INSERT INTO DOCUMENTO_UPLOAD (ENTE, ANNO, MESE, SUBMESE, [FILE], FILENAME, EXTENSION, DENOMINAZIONE) OUTPUT INSERTED.ID
                     VALUES (@ENTE, @ANNO, @MESE, @SUBMESE, @FILE, @FILENAME, @EXTENSION, @DENOMINAZIONE)";
 
+                        string Descritption = result.COGNOME + ' ' + result.NOME + ' ' + fileDetails.Month + ' ' + fileDetails.Year;
                         var insertedRecordId = await connection.QuerySingleOrDefaultAsync<int>(insertQuery, new
                         {
                             ENTE = result.ENTE,

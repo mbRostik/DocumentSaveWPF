@@ -3,20 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|c:\\users\\utenteprova2\\desktop\\myproject\\documentsavingproject\\documentsavingproject\\viewmodel\\movefilesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|solutionrelative:documentsavingproject\\viewmodel\\movefilesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|c:\\users\\utenteprova2\\desktop\\myproject\\documentsavingproject\\documentsavingproject\\view\\dbconnectionview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|solutionrelative:documentsavingproject\\view\\dbconnectionview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|c:\\users\\utenteprova2\\desktop\\myproject\\documentsavingproject\\documentsavingproject\\view\\movefilesview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|solutionrelative:documentsavingproject\\view\\movefilesview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|c:\\users\\utenteprova2\\desktop\\myproject\\documentsavingproject\\documentsavingproject\\view\\movefilesview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|solutionrelative:documentsavingproject\\view\\movefilesview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|c:\\users\\utenteprova2\\desktop\\myproject\\documentsavingproject\\documentsavingproject\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|solutionrelative:documentsavingproject\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|c:\\users\\utenteprova2\\desktop\\myproject\\documentsavingproject\\documentsavingproject\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|solutionrelative:documentsavingproject\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|c:\\users\\utenteprova2\\desktop\\myproject\\documentsavingproject\\documentsavingproject\\viewmodel\\movefilesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|solutionrelative:documentsavingproject\\viewmodel\\movefilesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{957DA0E3-783F-42EB-912F-41B3F79A0297}|BLL\\BLL.csproj|c:\\users\\utenteprova2\\desktop\\myproject\\documentsavingproject\\bll\\managers\\connectiontester.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{957DA0E3-783F-42EB-912F-41B3F79A0297}|BLL\\BLL.csproj|solutionrelative:bll\\managers\\connectiontester.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{957DA0E3-783F-42EB-912F-41B3F79A0297}|BLL\\BLL.csproj|c:\\users\\utenteprova2\\desktop\\myproject\\documentsavingproject\\bll\\bll_models\\databaseconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{957DA0E3-783F-42EB-912F-41B3F79A0297}|BLL\\BLL.csproj|solutionrelative:bll\\bll_models\\databaseconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{957DA0E3-783F-42EB-912F-41B3F79A0297}|BLL\\BLL.csproj|c:\\users\\utenteprova2\\desktop\\myproject\\documentsavingproject\\bll\\bll_models\\staticinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{957DA0E3-783F-42EB-912F-41B3F79A0297}|BLL\\BLL.csproj|solutionrelative:bll\\bll_models\\staticinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|c:\\users\\utenteprova2\\desktop\\myproject\\documentsavingproject\\documentsavingproject\\view\\movefilesview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|solutionrelative:documentsavingproject\\view\\movefilesview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,7 +58,67 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DBConnectionView.xaml",
+              "DocumentMoniker": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DocumentSavingProject\\View\\DBConnectionView.xaml",
+              "RelativeDocumentMoniker": "DocumentSavingProject\\View\\DBConnectionView.xaml",
+              "ToolTip": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DocumentSavingProject\\View\\DBConnectionView.xaml",
+              "RelativeToolTip": "DocumentSavingProject\\View\\DBConnectionView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-01-22T11:40:15.312Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DocumentSavingProject\\App.xaml",
+              "RelativeDocumentMoniker": "DocumentSavingProject\\App.xaml",
+              "ToolTip": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DocumentSavingProject\\App.xaml",
+              "RelativeToolTip": "DocumentSavingProject\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-01-22T11:39:41.829Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DocumentSavingProject\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "DocumentSavingProject\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DocumentSavingProject\\MainWindow.xaml",
+              "RelativeToolTip": "DocumentSavingProject\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-01-22T11:39:25.514Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DatabaseConfig.cs",
+              "DocumentMoniker": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\BLL\\BLL_Models\\DatabaseConfig.cs",
+              "RelativeDocumentMoniker": "BLL\\BLL_Models\\DatabaseConfig.cs",
+              "ToolTip": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\BLL\\BLL_Models\\DatabaseConfig.cs",
+              "RelativeToolTip": "BLL\\BLL_Models\\DatabaseConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-22T11:31:42.862Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "StaticInfo.cs",
+              "DocumentMoniker": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\BLL\\BLL_Models\\StaticInfo.cs",
+              "RelativeDocumentMoniker": "BLL\\BLL_Models\\StaticInfo.cs",
+              "ToolTip": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\BLL\\BLL_Models\\StaticInfo.cs",
+              "RelativeToolTip": "BLL\\BLL_Models\\StaticInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-22T11:31:41.813Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "MoveFilesView.xaml.cs",
               "DocumentMoniker": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DocumentSavingProject\\View\\MoveFilesView.xaml.cs",
               "RelativeDocumentMoniker": "DocumentSavingProject\\View\\MoveFilesView.xaml.cs",
@@ -46,8 +126,7 @@
               "RelativeToolTip": "DocumentSavingProject\\View\\MoveFilesView.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-22T11:23:07.755Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-22T11:23:07.755Z"
             },
             {
               "$type": "Document",
@@ -63,26 +142,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "ConnectionTester.cs",
               "DocumentMoniker": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\BLL\\Managers\\ConnectionTester.cs",
               "RelativeDocumentMoniker": "BLL\\Managers\\ConnectionTester.cs",
               "ToolTip": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\BLL\\Managers\\ConnectionTester.cs",
               "RelativeToolTip": "BLL\\Managers\\ConnectionTester.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-22T11:13:54.211Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "MoveFilesViewModel.cs",
               "DocumentMoniker": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DocumentSavingProject\\ViewModel\\MoveFilesViewModel.cs",
               "RelativeDocumentMoniker": "DocumentSavingProject\\ViewModel\\MoveFilesViewModel.cs",
               "ToolTip": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DocumentSavingProject\\ViewModel\\MoveFilesViewModel.cs",
               "RelativeToolTip": "DocumentSavingProject\\ViewModel\\MoveFilesViewModel.cs",
-              "ViewState": "AgIAAE8AAAAAAAAAAAAkwF0AAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAL0AAAAAAAAAAAAswMsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-22T08:49:46.297Z",
               "EditorCaption": ""
