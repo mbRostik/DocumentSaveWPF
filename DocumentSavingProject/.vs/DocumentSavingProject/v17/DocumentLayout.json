@@ -89,8 +89,7 @@
               "ToolTip": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DocumentSavingProject\\MainWindow.xaml",
               "RelativeToolTip": "DocumentSavingProject\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-01-22T11:39:25.514Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-22T11:39:25.514Z"
             },
             {
               "$type": "Document",
@@ -137,8 +136,7 @@
               "ToolTip": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DocumentSavingProject\\View\\MoveFilesView.xaml",
               "RelativeToolTip": "DocumentSavingProject\\View\\MoveFilesView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-01-22T11:24:27.216Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-22T11:24:27.216Z"
             },
             {
               "$type": "Document",
@@ -150,8 +148,7 @@
               "RelativeToolTip": "BLL\\Managers\\ConnectionTester.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-22T11:13:54.211Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-22T11:13:54.211Z"
             },
             {
               "$type": "Document",
@@ -163,8 +160,7 @@
               "RelativeToolTip": "DocumentSavingProject\\ViewModel\\MoveFilesViewModel.cs",
               "ViewState": "AgIAAL0AAAAAAAAAAAAswMsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-22T08:49:46.297Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-22T08:49:46.297Z"
             }
           ]
         }

@@ -55,7 +55,7 @@ namespace DocumentSavingProject.View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/DocumentSavingProject;component/view/dbconnectionview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/DocumentSavingProject;V1.0.0.0;component/view/dbconnectionview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\View\DBConnectionView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
