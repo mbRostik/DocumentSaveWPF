@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BLL.BLL_Models;
 using BLL.Managers;
-using GalaSoft.MvvmLight.Command;
+using CommunityToolkit.Mvvm.Input;
 
 namespace DocumentSavingProject.ViewModel
 {

@@ -10,9 +10,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using BLL.BLL_Models;
+using CommunityToolkit.Mvvm.Input;
 using DAL;
 using Dapper;
-using GalaSoft.MvvmLight.Command;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.WindowsAPICodePack.Dialogs;
@@ -216,7 +216,7 @@ namespace DocumentSavingProject.ViewModel
                             FILE = fileDetails.Data,
                             FILENAME = fileDetails.FileName,
                             EXTENSION = fileDetails.FileExtension,
-                            DENOMINAZIONE = (string)null
+                            DENOMINAZIONE = Descritption
                         }, transaction);
 
                         const string insertLinkTableQuery = @"
