@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using DocumentSavingProject.Converters;
 using DocumentSavingProject.ViewModel;
 
 namespace DocumentSavingProject.View
@@ -36,6 +37,16 @@ namespace DocumentSavingProject.View
                 {
                     viewModel.Password = passwordBox.Password; 
                 }
+            }
+        }
+
+        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
+        {
+            base.OnClosing(e);
+
+            if (Application.Current.MainWindow != null)
+            {
+                Application.Current.MainWindow.Show();
             }
         }
     }

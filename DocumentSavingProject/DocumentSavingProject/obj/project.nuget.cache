@@ -1,14 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "W6TZD6Aj53A=",
+  "dgSpecHash": "Al2NuaV4IuI=",
   "success": true,
   "projectFilePath": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DocumentSavingProject\\DocumentSavingProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\utenteprova2\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\utenteprova2\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
     "C:\\Users\\utenteprova2\\.nuget\\packages\\commonservicelocator\\2.0.2\\commonservicelocator.2.0.2.nupkg.sha512",
+    "C:\\Users\\utenteprova2\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\utenteprova2\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\utenteprova2\\.nuget\\packages\\libuv\\1.9.1\\libuv.1.9.1.nupkg.sha512",
+    "C:\\Users\\utenteprova2\\.nuget\\packages\\microsoft-windowsapicodepack-core\\1.1.5\\microsoft-windowsapicodepack-core.1.1.5.nupkg.sha512",
+    "C:\\Users\\utenteprova2\\.nuget\\packages\\microsoft-windowsapicodepack-shell\\1.1.5\\microsoft-windowsapicodepack-shell.1.1.5.nupkg.sha512",
     "C:\\Users\\utenteprova2\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",
     "C:\\Users\\utenteprova2\\.nuget\\packages\\microsoft.build.framework\\17.8.3\\microsoft.build.framework.17.8.3.nupkg.sha512",
     "C:\\Users\\utenteprova2\\.nuget\\packages\\microsoft.build.locator\\1.7.8\\microsoft.build.locator.1.7.8.nupkg.sha512",

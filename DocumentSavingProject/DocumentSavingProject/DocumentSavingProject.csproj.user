@@ -10,12 +10,18 @@
     <Compile Update="View\DBConnectionView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\MoveFilesView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\DBConnectionView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\MoveFilesView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

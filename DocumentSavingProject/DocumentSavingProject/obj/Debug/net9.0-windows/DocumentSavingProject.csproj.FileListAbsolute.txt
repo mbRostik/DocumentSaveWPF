@@ -182,3 +182,9 @@ C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProj
 C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProject\bin\Debug\net9.0-windows\runtimes\win7-x64\native\libuv.dll
 C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProject\bin\Debug\net9.0-windows\runtimes\win7-x86\native\libuv.dll
 C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProject\obj\Debug\net9.0-windows\App.baml
+C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProject\obj\Debug\net9.0-windows\View\MoveFilesView.g.cs
+C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProject\bin\Debug\net9.0-windows\Microsoft.WindowsAPICodePack.dll
+C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProject\bin\Debug\net9.0-windows\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProject\obj\Debug\net9.0-windows\View\MoveFilesView.baml
+C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProject\obj\Debug\net9.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProject\bin\Debug\net9.0-windows\Dapper.dll

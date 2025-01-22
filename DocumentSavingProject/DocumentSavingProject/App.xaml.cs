@@ -1,6 +1,7 @@
 ﻿using System.Configuration;
 using System.Data;
 using System.Windows;
+using BLL.BLL_Models;
 using BLL.Managers;
 using DAL;
 using DocumentSavingProject.View;
@@ -25,12 +26,16 @@ namespace DocumentSavingProject
                 {
                     serviceCollection.AddDbContext<DataBaseContext>(options =>
                     {
-                        options.UseSqlServer(ConnectionTester.CurrentDbContextConnection);
+                        options.UseSqlServer(StaticInfo.CurrentConnectionString);
                     }, ServiceLifetime.Scoped);
 
                     serviceCollection.AddSingleton<MainWindow>();
                     serviceCollection.AddTransient<DBConnectionView>();
                     serviceCollection.AddTransient<AddDatabaseViewModel>();
+                    serviceCollection.AddTransient<MoveFilesView>();
+                    serviceCollection.AddTransient<MoveFilesViewModel>();
+
+
                 })
                 .Build();
 

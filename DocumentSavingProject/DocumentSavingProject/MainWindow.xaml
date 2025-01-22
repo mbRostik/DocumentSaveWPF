@@ -4,9 +4,73 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DocumentSavingProject"
+        xmlns:converters="clr-namespace:DocumentSavingProject.Converters"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button Content="Open Add Database View" VerticalAlignment="Center" HorizontalAlignment="Center" Click="OpenAddDatabaseView"/>
+        Title="Main Menu" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen"
+        Background="#E3F2FD">
+    <Window.Resources>
+        <converters:StringToVisibilityConverter x:Key="StringToVisibilityConverter" />
+        <Style x:Key="ModernButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#007ACC" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontWeight" Value="Normal" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Padding" Value="10,5" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                CornerRadius="2">
+                            <Border Padding="{TemplateBinding Padding}">
+                                <ContentPresenter HorizontalAlignment="Center"
+                                                  VerticalAlignment="Center" />
+                            </Border>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#005A9E" />
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="#003F73" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="20">
+        <Border Background="White" CornerRadius="10" Padding="20" BorderBrush="#007ACC" BorderThickness="2">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <!-- Header -->
+                <TextBlock Text="Main Menu" FontSize="24" FontWeight="Bold" Foreground="#007ACC" Margin="0,0,0,20" HorizontalAlignment="Center" />
+
+                <!-- Open Add Database View -->
+                <Button Content="Make a DataBase connection"
+                        Width="200"
+                        Height="50"
+                        Click="OpenAddDatabaseView"
+                        Style="{StaticResource ModernButtonStyle}" />
+
+                <!-- Open Move Files View -->
+                <Button Content="Save files in the DB"
+                        Width="200"
+                        Height="50"
+                        Click="OpenMoveFilesView"
+                        Visibility="{Binding CurrentConnectionString, Converter={StaticResource StringToVisibilityConverter}}"
+                        Style="{StaticResource ModernButtonStyle}" />
+
+                <!-- Exit Button -->
+                <Button Content="Exit"
+                        Width="200"
+                        Height="50"
+                        Click="ExitApplication"
+                        Style="{StaticResource ModernButtonStyle}" />
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>

@@ -22,8 +22,6 @@ namespace BLL.Managers
 
         }
 
-        public static string CurrentDbContextConnection { get; set; } = "";
-
         public static async Task<List<Dictionary<string, object>>> ExecuteRawQueryAsync(DataBaseContext context, string query)
         {
            
@@ -64,7 +62,7 @@ namespace BLL.Managers
             return Convert.ToInt32(result) > 0;
         }
 
-        public static async Task<bool> TestConnectionAsync(string connectionString, IServiceProvider serviceProvider)
+        public static async Task<bool> TestConnectionAsync(string connectionString, IServiceProvider serviceProvider, DatabaseConfig config)
         {
             try
             {
@@ -82,7 +80,10 @@ namespace BLL.Managers
                         return false;
                     }
                 }
-                CurrentDbContextConnection = connectionString;
+
+                StaticInfo.CurrentConnectionString = connectionString;
+                StaticInfo.CurrentDatabaseConfig = config;
+                await context.Database.CloseConnectionAsync();
                 return true;
             }
             catch

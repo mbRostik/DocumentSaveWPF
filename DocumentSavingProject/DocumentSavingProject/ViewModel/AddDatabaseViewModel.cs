@@ -89,7 +89,7 @@ namespace DocumentSavingProject.ViewModel
 
             string connectionString = ConnectionTester.BuildConnectionString(config);
 
-            if (await ConnectionTester.TestConnectionAsync(connectionString, _serviceProvider))
+            if (await ConnectionTester.TestConnectionAsync(connectionString, _serviceProvider, config))
             {
                 StatusMessage = "Connection successful!";
             }

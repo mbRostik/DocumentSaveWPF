@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DAL.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace DAL
@@ -12,18 +11,5 @@ namespace DAL
     {
         public DataBaseContext(DbContextOptions options) : base(options) { }
 
-        public DbSet<ANAGDIP> ANAGDIPs { get; set; }
-        public DbSet<DOCUMENTO_UPLOAD> DOCUMENTO_UPLOADs { get; set; }
-
-        public DbSet<DOCUMENTO_UPLOAD_DIPENDENTE> DOCUMENTO_UPLOAD_DIPENDENTEs { get; set; }
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(DataBaseContext).Assembly);
-            modelBuilder.Entity<ANAGDIP>().ToTable("ANAGDIP"); 
-            modelBuilder.Entity<DOCUMENTO_UPLOAD>().ToTable("DOCUMENTO_UPLOAD");
-            modelBuilder.Entity<DOCUMENTO_UPLOAD_DIPENDENTE>().ToTable("DOCUMENTO_UPLOAD_DIPENDENTE");
-            base.OnModelCreating(modelBuilder);
-        }
     }
 }
