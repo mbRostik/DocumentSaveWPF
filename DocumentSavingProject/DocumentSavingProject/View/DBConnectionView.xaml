@@ -7,7 +7,7 @@
         xmlns:converters="clr-namespace:DocumentSavingProject.Converters"
         mc:Ignorable="d"
         Title="Database Connection" Height="500" Width="800"
-        WindowStartupLocation="CenterScreen"
+        WindowStartupLocation="Manual"
         Background="#E3F2FD">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
@@ -36,6 +36,8 @@
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Background" Value="#005A9E" />
+                    <Setter Property="Cursor" Value="Hand" />
+
                 </Trigger>
                 <Trigger Property="IsPressed" Value="True">
                     <Setter Property="Background" Value="#003F73" />
@@ -45,7 +47,20 @@
     </Window.Resources>
 
     <Grid Margin="20">
-        <Border Background="White" CornerRadius="10" Padding="20" BorderBrush="#007ACC" BorderThickness="2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Image Source="pack://application:,,,/Images/back.png"
+           Width="30" Height="30" 
+           HorizontalAlignment="Left" VerticalAlignment="Top"
+           Margin="10" 
+           Cursor="Hand"
+           MouseLeftButtonUp="OnBackButtonClick"
+           Grid.Row="0"
+               Panel.ZIndex="100"/>
+        <Border Background="White" CornerRadius="5" Padding="20" BorderBrush="#007ACC" BorderThickness="2" Panel.ZIndex="0">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />

@@ -34,6 +34,7 @@ namespace DocumentSavingProject
                     serviceCollection.AddTransient<AddDatabaseViewModel>();
                     serviceCollection.AddTransient<MoveFilesView>();
                     serviceCollection.AddTransient<MoveFilesViewModel>();
+                    serviceCollection.AddTransient<ShowCoupledUsersWindow>();
 
 
                 })
@@ -48,6 +49,7 @@ namespace DocumentSavingProject
 
         protected override async void OnExit(ExitEventArgs e)
         {
+
             if (_host != null)
             {
                 await _host.StopAsync();

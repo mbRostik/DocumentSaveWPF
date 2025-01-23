@@ -7,7 +7,7 @@
         xmlns:converters="clr-namespace:DocumentSavingProject.Converters"
         mc:Ignorable="d"
         Title="Files Saver" Height="600" Width="1000"
-        WindowStartupLocation="CenterScreen"
+        WindowStartupLocation="Manual"
         Background="White">
     <Window.Resources>
         <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
@@ -25,10 +25,10 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Border Background="{TemplateBinding Background}"
-                        CornerRadius="2">
+                                CornerRadius="2">
                             <Border Padding="{TemplateBinding Padding}">
                                 <ContentPresenter HorizontalAlignment="Center"
-                                          VerticalAlignment="Center" />
+                                                  VerticalAlignment="Center" />
                             </Border>
                         </Border>
                     </ControlTemplate>
@@ -37,6 +37,7 @@
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Background" Value="#005A9E" />
+                    <Setter Property="Cursor" Value="Hand" />
                 </Trigger>
                 <Trigger Property="IsPressed" Value="True">
                     <Setter Property="Background" Value="#003F73" />
@@ -45,70 +46,100 @@
         </Style>
     </Window.Resources>
 
-    <Grid Margin="20">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
+    <!-- Root Grid -->
+    <Grid>
+        <!-- Back Button in the Top-Left Corner -->
+        <Image Source="pack://application:,,,/Images/back.png"
+               Width="30" Height="30"
+               HorizontalAlignment="Left" VerticalAlignment="Top"
+               Margin="10"
+               Cursor="Hand"
+               MouseLeftButtonUp="OnBackButtonClick" />
 
-        <!-- Header Section -->
-        <Border Grid.Row="0" Background="#E3F2FD" CornerRadius="10" Padding="10">
-            <Grid>
+        <!-- Main Content Grid -->
+        <Grid Margin="20,50,20,20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- Header Section -->
+            <Border Grid.Row="0" Background="#E3F2FD" CornerRadius="5" Padding="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Path Selection -->
+                    <StackPanel Orientation="Horizontal" Grid.Column="0">
+                        <TextBlock Text="Choose a path to move files:" VerticalAlignment="Center" Margin="0,0,10,0" />
+                        <TextBox Text="{Binding SelectedPath, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" Width="400" Margin="0,0,10,0" />
+                        <Button Content="Browse" Command="{Binding BrowseCommand}" Style="{StaticResource ModernButtonStyle}" />
+                    </StackPanel>
+
+                    <!-- Action Buttons -->
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1">
+                        <Button Content="Move Files" Command="{Binding MoveFilesCommand}" 
+                                Visibility="{Binding IsLoading, Converter={StaticResource InverseBooleanToVisibilityConverter}}"
+                                Style="{StaticResource ModernButtonStyle}" />
+                        <ProgressBar IsIndeterminate="True"
+                                     Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                     Height="20" Width="200" Margin="0,10" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <!-- Columns Section -->
+            <Grid Grid.Row="1" Margin="0,20,0,0">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="3*" />
-                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <!-- Path Selection -->
-                <StackPanel Orientation="Horizontal" Grid.Column="0">
-                    <TextBlock Text="Choose a path to move files:" VerticalAlignment="Center" Margin="0,0,10,0" />
-                    <TextBox Text="{Binding SelectedPath, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" Width="400" Margin="0,0,10,0" />
-                    <Button Content="Browse" Command="{Binding BrowseCommand}" Style="{StaticResource ModernButtonStyle}" />
-                </StackPanel>
+                <!-- Invalid Files Column -->
+                <Border Grid.Column="0" Background="White" BorderBrush="#007ACC" BorderThickness="1" CornerRadius="10" Margin="10">
+                    <Grid Margin="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Invalid Files" FontSize="16" FontWeight="Bold" Foreground="#005A9E" Margin="0,0,0,10" />
+                        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="1">
+                            <ListBox ItemsSource="{Binding SkippedFiles}" />
+                        </ScrollViewer>
+                    </Grid>
+                </Border>
 
-                <!-- Action Buttons -->
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1">
-                    <Button Content="Move Files" Command="{Binding MoveFilesCommand}" 
-                            Visibility="{Binding IsLoading, Converter={StaticResource InverseBooleanToVisibilityConverter}}"
-                            Style="{StaticResource ModernButtonStyle}" />
-                    <ProgressBar IsIndeterminate="True"
-                         Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}"
-                         Height="20" Width="200" Margin="0,10" />
-                </StackPanel>
+                <!-- Files Not Added to DB Column -->
+                <Border Grid.Column="1" Background="White" BorderBrush="#007ACC" BorderThickness="1" CornerRadius="10" Margin="10">
+                    <Grid Margin="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Files Not Added to DB" FontSize="16" FontWeight="Bold" Foreground="#005A9E" Margin="0,0,0,10" />
+                        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="1">
+                            <ListBox ItemsSource="{Binding NotAddedToDbFiles}" />
+                        </ScrollViewer>
+                    </Grid>
+                </Border>
+
+                <!-- Files Added to DB Column -->
+                <Border Grid.Column="2" Background="White" BorderBrush="#007ACC" BorderThickness="1" CornerRadius="10" Margin="10">
+                    <Grid Margin="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Files Added to DB" FontSize="16" FontWeight="Bold" Foreground="#005A9E" Margin="0,0,0,10" />
+                        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="1">
+                            <ListBox ItemsSource="{Binding AddedToDbFiles}" />
+                        </ScrollViewer>
+                    </Grid>
+                </Border>
             </Grid>
-        </Border>
-
-        <!-- Columns Section -->
-        <Grid Grid.Row="1" Margin="0,20,0,0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-
-            <!-- Invalid Files Column -->
-            <Border Grid.Column="0" Background="White" BorderBrush="#007ACC" BorderThickness="1" CornerRadius="10" Margin="10">
-                <StackPanel Margin="10">
-                    <TextBlock Text="Invalid Files" FontSize="16" FontWeight="Bold" Foreground="#005A9E" Margin="0,0,0,10" />
-                    <ListBox ItemsSource="{Binding SkippedFiles}" />
-                </StackPanel>
-            </Border>
-
-            <!-- Files Not Added to DB Column -->
-            <Border Grid.Column="1" Background="White" BorderBrush="#007ACC" BorderThickness="1" CornerRadius="10" Margin="10">
-                <StackPanel Margin="10">
-                    <TextBlock Text="Files Not Added to DB" FontSize="16" FontWeight="Bold" Foreground="#005A9E" Margin="0,0,0,10" />
-                    <ListBox ItemsSource="{Binding NotAddedToDbFiles}" />
-                </StackPanel>
-            </Border>
-
-            <!-- Files Added to DB Column -->
-            <Border Grid.Column="2" Background="White" BorderBrush="#007ACC" BorderThickness="1" CornerRadius="10" Margin="10">
-                <StackPanel Margin="10">
-                    <TextBlock Text="Files Added to DB" FontSize="16" FontWeight="Bold" Foreground="#005A9E" Margin="0,0,0,10" />
-                    <ListBox ItemsSource="{Binding AddedToDbFiles}" />
-                </StackPanel>
-            </Border>
         </Grid>
     </Grid>
 </Window>

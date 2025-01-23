@@ -11,7 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using BLL.BLL_Models;
 using DocumentSavingProject.Converters;
+using DocumentSavingProject.Helpers;
 using DocumentSavingProject.ViewModel;
 
 namespace DocumentSavingProject.View
@@ -24,7 +26,8 @@ namespace DocumentSavingProject.View
         public DBConnectionView(IServiceProvider serviceProvider)
         {
             InitializeComponent();
-            DataContext = new AddDatabaseViewModel(serviceProvider);  
+            DataContext = new AddDatabaseViewModel(serviceProvider);
+
         }
 
         private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
@@ -42,12 +45,90 @@ namespace DocumentSavingProject.View
 
         protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
         {
-            base.OnClosing(e);
+            bool isMaximized = this.WindowState == WindowState.Maximized;
 
-            if (Application.Current.MainWindow != null)
+            if (isMaximized)
             {
-                Application.Current.MainWindow.Show();
+                base.OnClosing(e);
+                if (Helper.IsWindowOpen<ShowCoupledUsersWindow>())
+                {
+                    Helper.CloseExternalWindow<ShowCoupledUsersWindow>();
+                }
+                if (Application.Current.MainWindow != null)
+                {
+                    Application.Current.MainWindow.WindowState = WindowState.Maximized;
+                    Application.Current.MainWindow.Show();
+                }
+            }
+            else
+            {
+                StaticInfo.Width = this.ActualWidth;
+                StaticInfo.Height = this.ActualHeight;
+                if (Helper.IsWindowOpen<ShowCoupledUsersWindow>())
+                {
+                    Helper.CloseExternalWindow<ShowCoupledUsersWindow>();
+                }
+                base.OnClosing(e);
+
+
+                if (Application.Current.MainWindow != null)
+                {
+                    Application.Current.MainWindow.WindowState = WindowState.Normal;
+                    Application.Current.MainWindow.Hide();
+                    Application.Current.MainWindow.Height = StaticInfo.Height;
+                    Application.Current.MainWindow.Width = StaticInfo.Width;
+                    Application.Current.MainWindow.Left = this.Left;
+                    Application.Current.MainWindow.Top = this.Top;
+                    Application.Current.MainWindow.UpdateLayout();
+                    Application.Current.MainWindow.Show();
+                }
+            }
+
+        }
+
+        protected void OnBackButtonClick(object sender, MouseButtonEventArgs e)
+        {
+
+            bool isMaximized = this.WindowState == WindowState.Maximized;
+
+            if (isMaximized)
+            {
+                if (Helper.IsWindowOpen<ShowCoupledUsersWindow>())
+                {
+                    Helper.CloseExternalWindow<ShowCoupledUsersWindow>();
+                }
+                this.Close();
+
+                if (Application.Current.MainWindow != null)
+                {
+                    Application.Current.MainWindow.WindowState = WindowState.Maximized;
+                    Application.Current.MainWindow.Show();
+                }
+            }
+            else
+            {
+                StaticInfo.Width = this.ActualWidth;
+                StaticInfo.Height = this.ActualHeight;
+
+                this.Close();
+
+                if (Helper.IsWindowOpen<ShowCoupledUsersWindow>())
+                {
+                    Helper.CloseExternalWindow<ShowCoupledUsersWindow>();
+                }
+
+                if (Application.Current.MainWindow != null)
+                {
+                    Application.Current.MainWindow.Hide();
+                    Application.Current.MainWindow.Height = StaticInfo.Height;
+                    Application.Current.MainWindow.Width = StaticInfo.Width;
+                    Application.Current.MainWindow.Left = this.Left;
+                    Application.Current.MainWindow.Top = this.Top;
+                    Application.Current.MainWindow.UpdateLayout();
+                    Application.Current.MainWindow.Show();
+                }
             }
         }
+
     }
 }

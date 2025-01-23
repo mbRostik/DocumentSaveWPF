@@ -13,8 +13,11 @@ using BLL.BLL_Models;
 using CommunityToolkit.Mvvm.Input;
 using DAL;
 using Dapper;
+using DocumentSavingProject.Helpers;
+using DocumentSavingProject.View;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.WindowsAPICodePack.Dialogs;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
@@ -28,6 +31,8 @@ namespace DocumentSavingProject.ViewModel
         private ObservableCollection<string> _skippedFiles = new();
         private ObservableCollection<string> _notAddedToDbFiles = new();
         private ObservableCollection<string> _addedToDbFiles = new();
+
+        
 
         public ObservableCollection<string> AddedToDbFiles
         {
@@ -91,6 +96,11 @@ namespace DocumentSavingProject.ViewModel
 
         private async Task MoveFilesAsync()
         {
+            if (Helper.IsWindowOpen<ShowCoupledUsersWindow>())
+            {
+                Helper.CloseExternalWindow<ShowCoupledUsersWindow>();
+            }
+
             IsLoading = true;
             SkippedFiles.Clear();
             NotAddedToDbFiles.Clear();
@@ -106,10 +116,6 @@ namespace DocumentSavingProject.ViewModel
             optionsBuilder.UseSqlServer(StaticInfo.CurrentConnectionString);
 
             using var context = new DataBaseContext(optionsBuilder.Options);
-
-            
-
-            
 
             var files = Directory.GetFiles(SelectedPath);
 
@@ -147,7 +153,7 @@ namespace DocumentSavingProject.ViewModel
                         Month = month,
                         Data = fileContent,
                         FileExtension = Path.GetExtension(file),
-                        FileName = Path.GetFileName(file)
+                        FileName = fileName
                     };
 
                     var addedToDb = await AddFileToDatabaseAsync(fileDetails, context);
@@ -171,11 +177,19 @@ namespace DocumentSavingProject.ViewModel
                 }
             }
             await context.Database.CloseConnectionAsync();
+            files = null;
             IsLoading = false;
+
+            if (!StaticInfo.fewUsersCollection.IsNullOrEmpty())
+            {
+                var showCoupledUsers = _serviceProvider.GetRequiredService<ShowCoupledUsersWindow>();
+                showCoupledUsers.Show();
+            }
         }
 
         private async Task<bool> AddFileToDatabaseAsync(FileDetails fileDetails, DataBaseContext context)
         {
+
             using (var connection = context.Database.GetDbConnection())
             {
                 connection.ConnectionString = StaticInfo.CurrentConnectionString;
@@ -194,9 +208,27 @@ namespace DocumentSavingProject.ViewModel
                         var results = (await connection.QueryAsync<(int PROGRESSIVO, string ENTE, string NOME, string COGNOME)>(query,
                                         new { Name = fileDetails.Name }, transaction)).ToList();
 
-                        if (results.Count == 0 || results.Count > 1)
+                        if (results.Count == 0)
                         {
                             transaction.Rollback();
+                            return false;
+                        }
+
+                        if (results.Count > 1)
+                        {
+                            var fileUsers = results.Select(r => new FileUser
+                            {
+                                Name = r.NOME,
+                                SurName = r.COGNOME,
+                                PROGRESSIVO = r.PROGRESSIVO
+                            }).ToList();
+
+                            StaticInfo.fewUsersCollection.Add(new Dictionary<FileDetails, List<FileUser>>
+                            {
+                                { fileDetails, fileUsers }
+                            });
+
+                            transaction.Rollback(); 
                             return false;
                         }
 
@@ -235,7 +267,6 @@ namespace DocumentSavingProject.ViewModel
                     catch (Exception ex)
                     {
                         transaction.Rollback();
-                        Console.WriteLine($"Error: {ex.Message}");
                         return false;
                     }
                 }
@@ -250,15 +281,5 @@ namespace DocumentSavingProject.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-
-        private class FileDetails
-        {
-            public byte[] Data { get; set; }
-            public string Name { get; set; }
-            public int Year { get; set; }
-            public int Month { get; set; }
-            public string FileExtension { get; set; }
-            public string FileName { get; set; }
-        }
     }
 }
