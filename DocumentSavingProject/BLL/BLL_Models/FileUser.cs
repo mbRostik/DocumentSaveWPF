@@ -8,6 +8,7 @@ namespace BLL.BLL_Models
 {
     public class FileUser
     {
+        public int ENTE {  get; set; }
         public string Name { get; set; }
         public string SurName { get; set; }
         public int PROGRESSIVO { get; set; }

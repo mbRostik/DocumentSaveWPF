@@ -2,11 +2,21 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Data;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using BLL.BLL_Models;
+using CommunityToolkit.Mvvm.Input;
+using DAL;
+using System.Windows;
+using Dapper;
+using DocumentSavingProject.View;
+using Microsoft.EntityFrameworkCore;
+using MS.WindowsAPICodePack.Internal;
+using DocumentSavingProject.Helpers;
 
 namespace DocumentSavingProject.ViewModel
 {
@@ -94,14 +104,89 @@ namespace DocumentSavingProject.ViewModel
             }
         }
 
-
+        public ICommand RemoveUserCommand { get; }
         private readonly IServiceProvider _serviceProvider;
+        public RelayCommand ConfirmUserListCommand { get; set; }
         public ShowCoupledUsersViewModel(IServiceProvider serviceProvider)
         {
             _serviceProvider = serviceProvider;
             FewUsersCollection = StaticInfo.fewUsersCollection;
+            RemoveUserCommand = new RelayCommand<FileUser>(RemoveUser);
+            ConfirmUserListCommand = new RelayCommand(async () => await ConfirmUserList());
+        }
+        private void RemoveUser(FileUser user)
+        {
+            if (SelectedFile != null && FileUserSelections.ContainsKey(SelectedFile))
+            {
+                if (FileUserSelections[SelectedFile] == user)
+                {
+                    FileUserSelections.Remove(SelectedFile);
+                }
+
+                UpdateSelectedFileUsers();
+            }
         }
 
+        private async Task ConfirmUserList()
+        {
+            if(FileUserSelections != null && FileUserSelections.Any())
+            {
+                var optionsBuilder = new DbContextOptionsBuilder<DataBaseContext>();
+                optionsBuilder.UseSqlServer(StaticInfo.CurrentConnectionString);
+
+                using var context = new DataBaseContext(optionsBuilder.Options);
+
+                foreach (var item in FileUserSelections)
+                {
+                    using (var connection = context.Database.GetDbConnection())
+                    {
+                        connection.ConnectionString = StaticInfo.CurrentConnectionString;
+                        if (connection.State == ConnectionState.Closed)
+                            await connection.OpenAsync();
+
+                        using (var transaction = connection.BeginTransaction())
+                        {
+                            const string insertQuery = @"
+                    INSERT INTO DOCUMENTO_UPLOAD (ENTE, ANNO, MESE, SUBMESE, [FILE], FILENAME, EXTENSION, DENOMINAZIONE) OUTPUT INSERTED.ID
+                    VALUES (@ENTE, @ANNO, @MESE, @SUBMESE, @FILE, @FILENAME, @EXTENSION, @DENOMINAZIONE)"
+                            ;
+
+                            string Descritption = item.Value.Name + ' ' + item.Value.SurName + ' ' + item.Key.Month + ' ' + item.Key.Year;
+
+                            var insertedRecordId = await connection.QuerySingleOrDefaultAsync<int>(insertQuery, new
+                            {
+                                ENTE = item.Value.ENTE,
+                                ANNO = item.Key.Year,
+                                MESE = item.Key.Month,
+                                SUBMESE = (int?)null,
+                                FILE = item.Key.Data,
+                                FILENAME = item.Key.FileName,
+                                EXTENSION = item.Key.FileExtension,
+                                DENOMINAZIONE = Descritption
+                            }, transaction);
+
+                            const string insertLinkTableQuery = @"
+                        INSERT INTO DOCUMENTO_UPLOAD_DIPENDENTE (ID, DIPENDENTE)
+                        VALUES (@ID, @DIPENDENTE)";
+
+                            await connection.ExecuteAsync(insertLinkTableQuery, new
+                            {
+                                ID = insertedRecordId,
+                                DIPENDENTE = item.Value.PROGRESSIVO
+                            }, transaction);
+
+                            transaction.Commit();
+
+                            Application.Current.Windows.OfType<MoveFilesView>().FirstOrDefault().FileWithMultUsersAdd(item.Key.FileName);
+
+                        }
+                    }
+                }
+
+                
+            }
+            Helper.CloseExternalWindow<ShowCoupledUsersWindow>();
+        }
         private void UpdateFileUserSelection()
         {
             if (SelectedFile != null && SelectedFileUser != null)

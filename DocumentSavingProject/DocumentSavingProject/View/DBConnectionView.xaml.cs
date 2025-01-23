@@ -29,13 +29,22 @@ namespace DocumentSavingProject.View
             DataContext = new AddDatabaseViewModel(serviceProvider);
 
         }
-
+        private void OnTextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (DataContext is AddDatabaseViewModel viewModel)
+            {
+                viewModel.StatusMessage = string.Empty;
+            }
+        }
         private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
         {
+            var viewModel = DataContext as AddDatabaseViewModel;
+            viewModel.StatusMessage = string.Empty;
+
             var passwordBox = sender as PasswordBox;
             if (passwordBox != null)
             {
-                var viewModel = DataContext as AddDatabaseViewModel;
+                
                 if (viewModel != null)
                 {
                     viewModel.Password = passwordBox.Password; 

@@ -119,6 +119,19 @@ namespace DocumentSavingProject.View
             }
         }
 
+        public void FileWithMultUsersAdd (string name)
+        {
+            try
+            {
+                var viewModel = DataContext as MoveFilesViewModel;
+                viewModel.AddedToDbFiles.Add(name);
+                viewModel.NotAddedToDbFiles.Remove(name);
+            }
+            catch
+            {
 
+            }
+            
+        }
     }
 }

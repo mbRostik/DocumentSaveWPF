@@ -57,6 +57,18 @@ namespace DocumentSavingProject.ViewModel
             set { _selectedPath = value; OnPropertyChanged(); }
         }
 
+        public string DatabaseConfigSummary
+        {
+            get
+            {
+                if (StaticInfo.CurrentDatabaseConfig != null)
+                {
+                    var config = StaticInfo.CurrentDatabaseConfig;
+                    return $"Server: {config.ServerName}, Database: {config.DatabaseName}";
+                }
+                return "No database configuration found.";
+            }
+        }
 
         public bool IsLoading
         {
@@ -118,7 +130,7 @@ namespace DocumentSavingProject.ViewModel
             using var context = new DataBaseContext(optionsBuilder.Options);
 
             var files = Directory.GetFiles(SelectedPath);
-
+            SelectedPath = null;
             foreach (var file in files)
             {
                 try
@@ -165,8 +177,6 @@ namespace DocumentSavingProject.ViewModel
                     else
                     {
                         NotAddedToDbFiles.Add(fileName);
-                        
-
                     }
                 }
                 catch (Exception ex)
@@ -205,7 +215,7 @@ namespace DocumentSavingProject.ViewModel
                             FROM ANAGDIP 
                             WHERE COGNOME = @Name";
 
-                        var results = (await connection.QueryAsync<(int PROGRESSIVO, string ENTE, string NOME, string COGNOME)>(query,
+                        var results = (await connection.QueryAsync<(int PROGRESSIVO, int ENTE, string NOME, string COGNOME)>(query,
                                         new { Name = fileDetails.Name }, transaction)).ToList();
 
                         if (results.Count == 0)
@@ -218,6 +228,7 @@ namespace DocumentSavingProject.ViewModel
                         {
                             var fileUsers = results.Select(r => new FileUser
                             {
+                                ENTE = r.ENTE,
                                 Name = r.NOME,
                                 SurName = r.COGNOME,
                                 PROGRESSIVO = r.PROGRESSIVO
@@ -276,7 +287,7 @@ namespace DocumentSavingProject.ViewModel
 
 
         public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }

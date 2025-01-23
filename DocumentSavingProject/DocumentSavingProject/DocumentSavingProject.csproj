@@ -10,6 +10,8 @@
 
   <ItemGroup>
     <None Remove="Images\back.png" />
+    <None Remove="Images\cancel.gif" />
+    <None Remove="Images\remove.gif" />
   </ItemGroup>
 
   <ItemGroup>
@@ -38,6 +40,8 @@
     <Resource Include="Images\back.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Images\cancel.gif" />
+    <Resource Include="Images\remove.gif" />
   </ItemGroup>
 
 </Project>

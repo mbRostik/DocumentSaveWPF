@@ -12,6 +12,8 @@
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
         <converters:InverseBooleanToVisibilityConverter x:Key="InverseBooleanToVisibilityConverter" />
+        <converters:NullOrEmptyToVisibilityConverter x:Key="NullOrEmptyToVisibilityConverter" />
+
         <Style x:Key="ModernButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="#007ACC" />
             <Setter Property="Foreground" Value="White" />
@@ -80,16 +82,23 @@
                 <!-- Input Fields -->
                 <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top" Width="400">
                     <TextBlock Text="Server Name:" FontWeight="Bold" Margin="0,0,0,5" />
-                    <TextBox Text="{Binding ServerName, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,15" />
+                    <TextBox Text="{Binding ServerName, UpdateSourceTrigger=PropertyChanged}" 
+             Margin="0,0,0,15" 
+             TextChanged="OnTextChanged" />
 
                     <TextBlock Text="Database Name:" FontWeight="Bold" Margin="0,0,0,5" />
-                    <TextBox Text="{Binding DatabaseName, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,15" />
+                    <TextBox Text="{Binding DatabaseName, UpdateSourceTrigger=PropertyChanged}" 
+             Margin="0,0,0,15" 
+             TextChanged="OnTextChanged" />
 
                     <TextBlock Text="Username:" FontWeight="Bold" Margin="0,0,0,5" />
-                    <TextBox Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,15" />
+                    <TextBox Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}" 
+             Margin="0,0,0,15" 
+             TextChanged="OnTextChanged" />
 
                     <TextBlock Text="Password:" FontWeight="Bold" Margin="0,0,0,5" />
-                    <PasswordBox PasswordChanged="PasswordBox_PasswordChanged" Margin="0,0,0,15" />
+                    <PasswordBox PasswordChanged="PasswordBox_PasswordChanged" 
+                 Margin="0,0,0,15" />
 
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,0,15">
                         <TextBlock Text="Trust Server Certificate:" FontWeight="Bold" VerticalAlignment="Center" Margin="0,0,10,0" />
@@ -102,10 +111,62 @@
                     <!-- Test Connection Button -->
                     <Button Content="Connect" 
             Command="{Binding TestConnectionCommand}" 
-            Style="{StaticResource ModernButtonStyle}" 
-            Background="#28A745" 
-            Width="200"
-            Visibility="{Binding IsLoading, Converter={StaticResource InverseBooleanToVisibilityConverter}}" />
+            Visibility="{Binding IsLoading, Converter={StaticResource InverseBooleanToVisibilityConverter}}"
+                            Width="200"
+        Height="50"
+        Background="#28A745"
+        Foreground="White"
+        FontSize="16"
+        FontWeight="Bold"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center">
+                        <Button.Style>
+                            <Style TargetType="Button" BasedOn="{StaticResource ModernButtonStyle}">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Grid>
+                                                <!-- Button Background -->
+                                                <Border x:Name="ButtonBorder"
+                                    Background="{TemplateBinding Background}"
+                                    CornerRadius="1"
+                                    BorderBrush="BLACK"
+                                    BorderThickness="0">
+                                                    <ContentPresenter HorizontalAlignment="Center"
+                                                  VerticalAlignment="Center"
+                                                  TextBlock.FontWeight="Bold" />
+                                                </Border>
+                                            </Grid>
+                                            <ControlTemplate.Triggers>
+                                                <!-- Hover Animation -->
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Trigger.EnterActions>
+                                                        <BeginStoryboard>
+                                                            <Storyboard>
+                                                                <ColorAnimation Storyboard.TargetName="ButtonBorder"
+                                                            Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                            To="#1E7D34" Duration="0:0:0.3" />
+                                                            </Storyboard>
+                                                        </BeginStoryboard>
+                                                    </Trigger.EnterActions>
+                                                    <Trigger.ExitActions>
+                                                        <BeginStoryboard>
+                                                            <Storyboard>
+                                                                <ColorAnimation Storyboard.TargetName="ButtonBorder"
+                                                            Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                            To="#28A745" Duration="0:0:0.3" />
+                                                            </Storyboard>
+                                                        </BeginStoryboard>
+                                                    </Trigger.ExitActions>
+                                                </Trigger>
+
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Style>
+                    </Button>
 
                     <!-- Loader -->
                     <ProgressBar IsIndeterminate="True"
@@ -114,10 +175,42 @@
 
                     <!-- Status Message -->
                     <TextBlock Text="{Binding StatusMessage}" 
-               Foreground="Red" 
-               FontWeight="Bold" 
-               HorizontalAlignment="Center" 
-               Margin="0,10,0,0" />
+           HorizontalAlignment="Center" 
+           Margin="0,10,0,0"
+           FontSize="16"
+           FontWeight="Bold"
+           Foreground="Red"
+           Opacity="0">
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="Opacity" Value="0" />
+                                <Style.Triggers>
+                                    <!-- Trigger for when StatusMessage is not empty -->
+                                    <DataTrigger Binding="{Binding StatusMessage, Converter={StaticResource NullOrEmptyToVisibilityConverter}}" Value="Visible">
+                                        <DataTrigger.EnterActions>
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                                                 From="0" To="1"
+                                                 Duration="0:0:0.5" />
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </DataTrigger.EnterActions>
+                                        <DataTrigger.ExitActions>
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                                                 From="1" To="0"
+                                                 Duration="0:0:0.5" />
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </DataTrigger.ExitActions>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+
                 </StackPanel>
             </Grid>
         </Border>
