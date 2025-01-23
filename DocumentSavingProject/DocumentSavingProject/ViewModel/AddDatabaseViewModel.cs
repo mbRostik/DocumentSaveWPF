@@ -95,7 +95,7 @@ namespace DocumentSavingProject.ViewModel
             }
             else
             {
-                StatusMessage = "Connection failed. Please check the details.";
+                StatusMessage = "Connection failed. (Wrong connection data or the database does not contain: DOCUMENTO_UPLOAD_DIPENDENTE/DOCUMENTO_UPLOAD/ANAGDIP)";
             }
 
             IsLoading = false;  

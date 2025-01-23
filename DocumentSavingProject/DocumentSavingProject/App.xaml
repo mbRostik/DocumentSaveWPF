@@ -1,7 +1,9 @@
 ﻿<Application x:Class="DocumentSavingProject.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:converters="clr-namespace:DocumentSavingProject.Converters"
              Startup="OnStartup"
+             
              ShutdownMode="OnMainWindowClose">
     
 </Application>

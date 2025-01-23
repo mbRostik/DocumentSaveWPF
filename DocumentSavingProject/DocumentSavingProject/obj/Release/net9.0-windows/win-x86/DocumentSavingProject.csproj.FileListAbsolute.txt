@@ -630,3 +630,7 @@ C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProj
 C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProject\obj\Release\net9.0-windows\win-x86\DocumentSavingProject.pdb
 C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProject\obj\Release\net9.0-windows\win-x86\DocumentSavingProject.genruntimeconfig.cache
 C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProject\obj\Release\net9.0-windows\win-x86\ref\DocumentSavingProject.dll
+C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProject\obj\Release\net9.0-windows\win-x86\View\ShowCoupledUsersWindow.g.cs
+C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProject\obj\Release\net9.0-windows\win-x86\View\ShowCoupledUsersWindow.baml
+C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProject\obj\Release\net9.0-windows\win-x86\DocumentSavingProject_Content.g.cs
+C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProject\bin\Release\net9.0-windows\win-x86\Images\icon.ico

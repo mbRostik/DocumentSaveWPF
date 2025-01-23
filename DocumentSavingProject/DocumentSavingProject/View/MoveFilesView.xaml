@@ -7,6 +7,7 @@
         xmlns:converters="clr-namespace:DocumentSavingProject.Converters"
         mc:Ignorable="d"
         Title="Files Saver" Height="600" Width="1000"
+        Icon="pack://application:,,,/Images/icon.ico"
         WindowStartupLocation="Manual"
         Background="White">
     <Window.Resources>

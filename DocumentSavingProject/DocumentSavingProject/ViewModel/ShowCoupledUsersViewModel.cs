@@ -189,22 +189,35 @@ namespace DocumentSavingProject.ViewModel
         }
         private void UpdateFileUserSelection()
         {
-            if (SelectedFile != null && SelectedFileUser != null)
+            if (SelectedFile != null)
             {
-                if (FileUserSelections.ContainsKey(SelectedFile))
+                if (SelectedFileUser != null)
                 {
-                    FileUserSelections[SelectedFile] = SelectedFileUser;
-                }
-                else
-                {
-                    FileUserSelections.Add(SelectedFile, SelectedFileUser);
+                    // Add or update the selected user for the file
+                    if (FileUserSelections.ContainsKey(SelectedFile))
+                    {
+                        FileUserSelections[SelectedFile] = SelectedFileUser;
+                    }
+                    else
+                    {
+                        FileUserSelections.Add(SelectedFile, SelectedFileUser);
+                    }
+
+                    // Set IsUserSelected to true
+                    SelectedFile.IsUserSelected = true;
                 }
             }
         }
+
         private void UpdateFileDetailsList()
         {
             FewUsersCollectionKeys = new ObservableCollection<FileDetails>(
                 FewUsersCollection.SelectMany(d => d.Keys));
+
+            foreach (var file in FewUsersCollectionKeys)
+            {
+                file.IsUserSelected = FileUserSelections.ContainsKey(file);
+            }
         }
 
         private void UpdateSelectedFileUsers()
