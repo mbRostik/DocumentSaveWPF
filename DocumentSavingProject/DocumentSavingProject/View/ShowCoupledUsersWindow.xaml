@@ -14,7 +14,7 @@
         </Grid.ColumnDefinitions>
 
         <!-- Left Column: Files -->
-        <Border BorderBrush="#007ACC" BorderThickness="1" CornerRadius="5" Margin="10">
+        <Border BorderBrush="#007ACC" BorderThickness="1" CornerRadius="2" Margin="10">
             <ListBox ItemsSource="{Binding FewUsersCollectionKeys}" 
                      DisplayMemberPath="FileName"
                      SelectedItem="{Binding SelectedFile, Mode=TwoWay}" 
@@ -22,16 +22,47 @@
         </Border>
 
         <!-- Right Column: Users -->
-        <Border Grid.Column="1" BorderBrush="#007ACC" BorderThickness="1" CornerRadius="5" Margin="10">
+        <Border Grid.Column="1" BorderBrush="#007ACC" BorderThickness="1" CornerRadius="2" Margin="10">
             <ListBox ItemsSource="{Binding SelectedFileUsers}" 
-                     Margin="10">
+         SelectedItem="{Binding SelectedFileUser, Mode=TwoWay}" 
+         Margin="10">
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem" BasedOn="{x:Null}">
+                        <!-- Default Background -->
+                        <Setter Property="Background" Value="White" />
+                        <Setter Property="FontSize" Value="14" />
+                        <Setter Property="Margin" Value="5" />
+                        <Setter Property="Padding" Value="10" />
+                        <!-- Hover Effect -->
+                        <Setter Property="Control.Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ListBoxItem">
+                                    <Border Background="{TemplateBinding Background}" CornerRadius="2">
+                                        <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center" />
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Background" Value="LightGreen" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#E0E0E0" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </ListBox.ItemContainerStyle>
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Vertical">
-                            <TextBlock Text="{Binding Name}" FontWeight="Bold" />
-                            <TextBlock Text="{Binding SurName}" />
-                            <TextBlock Text="{Binding PROGRESSIVO}" />
+                            <TextBlock Text="{Binding Name}" FontWeight="Bold" Margin="10,0,0,0" />
+                            <TextBlock Text="{Binding SurName}" Margin="10,0,0,0" />
+                            <TextBlock Text="{Binding PROGRESSIVO}" Margin="10,0,0,0" />
                         </StackPanel>
+
+
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>

@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|c:\\users\\utenteprova2\\desktop\\myproject\\documentsavingproject\\documentsavingproject\\view\\movefilesview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|solutionrelative:documentsavingproject\\view\\movefilesview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|c:\\users\\utenteprova2\\desktop\\myproject\\documentsavingproject\\documentsavingproject\\view\\showcoupleduserswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|solutionrelative:documentsavingproject\\view\\showcoupleduserswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|c:\\users\\utenteprova2\\desktop\\myproject\\documentsavingproject\\documentsavingproject\\view\\dbconnectionview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|solutionrelative:documentsavingproject\\view\\dbconnectionview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|c:\\users\\utenteprova2\\desktop\\myproject\\documentsavingproject\\documentsavingproject\\viewmodel\\showcoupledusersviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|solutionrelative:documentsavingproject\\viewmodel\\showcoupledusersviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|c:\\users\\utenteprova2\\desktop\\myproject\\documentsavingproject\\documentsavingproject\\viewmodel\\movefilesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|solutionrelative:documentsavingproject\\viewmodel\\movefilesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|c:\\users\\utenteprova2\\desktop\\myproject\\documentsavingproject\\documentsavingproject\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|solutionrelative:documentsavingproject\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|c:\\users\\utenteprova2\\desktop\\myproject\\documentsavingproject\\documentsavingproject\\view\\showcoupleduserswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|solutionrelative:documentsavingproject\\view\\showcoupleduserswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,53 +26,41 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DBConnectionView.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DocumentSavingProject\\View\\DBConnectionView.xaml.cs",
-              "RelativeDocumentMoniker": "DocumentSavingProject\\View\\DBConnectionView.xaml.cs",
-              "ToolTip": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DocumentSavingProject\\View\\DBConnectionView.xaml.cs",
-              "RelativeToolTip": "DocumentSavingProject\\View\\DBConnectionView.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIMAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "ShowCoupledUsersWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DocumentSavingProject\\View\\ShowCoupledUsersWindow.xaml.cs",
+              "RelativeDocumentMoniker": "DocumentSavingProject\\View\\ShowCoupledUsersWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DocumentSavingProject\\View\\ShowCoupledUsersWindow.xaml.cs",
+              "RelativeToolTip": "DocumentSavingProject\\View\\ShowCoupledUsersWindow.xaml.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAAB4AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-23T08:37:12.728Z",
+              "WhenOpened": "2025-01-23T09:28:21.289Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MoveFilesView.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DocumentSavingProject\\View\\MoveFilesView.xaml.cs",
-              "RelativeDocumentMoniker": "DocumentSavingProject\\View\\MoveFilesView.xaml.cs",
-              "ToolTip": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DocumentSavingProject\\View\\MoveFilesView.xaml.cs",
-              "RelativeToolTip": "DocumentSavingProject\\View\\MoveFilesView.xaml.cs",
-              "ViewState": "AgIAAE8AAAAAAAAAAAAkwGcAAABCAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-23T08:24:04.439Z",
+              "Title": "ShowCoupledUsersWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DocumentSavingProject\\View\\ShowCoupledUsersWindow.xaml",
+              "RelativeDocumentMoniker": "DocumentSavingProject\\View\\ShowCoupledUsersWindow.xaml",
+              "ToolTip": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DocumentSavingProject\\View\\ShowCoupledUsersWindow.xaml",
+              "RelativeToolTip": "DocumentSavingProject\\View\\ShowCoupledUsersWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-01-23T08:54:49.262Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "App.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DocumentSavingProject\\App.xaml.cs",
-              "RelativeDocumentMoniker": "DocumentSavingProject\\App.xaml.cs",
-              "ToolTip": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DocumentSavingProject\\App.xaml.cs",
-              "RelativeToolTip": "DocumentSavingProject\\App.xaml.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAkwBAAAAASAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "ShowCoupledUsersViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DocumentSavingProject\\ViewModel\\ShowCoupledUsersViewModel.cs",
+              "RelativeDocumentMoniker": "DocumentSavingProject\\ViewModel\\ShowCoupledUsersViewModel.cs",
+              "ToolTip": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DocumentSavingProject\\ViewModel\\ShowCoupledUsersViewModel.cs",
+              "RelativeToolTip": "DocumentSavingProject\\ViewModel\\ShowCoupledUsersViewModel.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAADwv2EAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-23T08:17:56.265Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MoveFilesViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DocumentSavingProject\\ViewModel\\MoveFilesViewModel.cs",
-              "RelativeDocumentMoniker": "DocumentSavingProject\\ViewModel\\MoveFilesViewModel.cs",
-              "ToolTip": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DocumentSavingProject\\ViewModel\\MoveFilesViewModel.cs",
-              "RelativeToolTip": "DocumentSavingProject\\ViewModel\\MoveFilesViewModel.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAwwEMAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-23T08:05:03.077Z"
+              "WhenOpened": "2025-01-23T08:53:16.247Z",
+              "EditorCaption": ""
             }
           ]
         },

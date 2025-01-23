@@ -60,6 +60,41 @@ namespace DocumentSavingProject.ViewModel
                 OnPropertyChanged();
             }
         }
+
+        private Dictionary<FileDetails, FileUser> _fileUserSelections = new();
+        public Dictionary<FileDetails, FileUser> FileUserSelections
+        {
+            get => _fileUserSelections;
+            set
+            {
+                _fileUserSelections = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private FileUser _selectedFileUser;
+        public FileUser SelectedFileUser
+        {
+            get => _selectedFileUser;
+            set
+            {
+                if (_selectedFileUser == value)
+                {
+                    _selectedFileUser = null;
+
+                    OnPropertyChanged(nameof(SelectedFileUser));
+                }
+                else
+                {
+                    _selectedFileUser = value;
+                }
+
+                OnPropertyChanged();
+                UpdateFileUserSelection();
+            }
+        }
+
+
         private readonly IServiceProvider _serviceProvider;
         public ShowCoupledUsersViewModel(IServiceProvider serviceProvider)
         {
@@ -67,6 +102,20 @@ namespace DocumentSavingProject.ViewModel
             FewUsersCollection = StaticInfo.fewUsersCollection;
         }
 
+        private void UpdateFileUserSelection()
+        {
+            if (SelectedFile != null && SelectedFileUser != null)
+            {
+                if (FileUserSelections.ContainsKey(SelectedFile))
+                {
+                    FileUserSelections[SelectedFile] = SelectedFileUser;
+                }
+                else
+                {
+                    FileUserSelections.Add(SelectedFile, SelectedFileUser);
+                }
+            }
+        }
         private void UpdateFileDetailsList()
         {
             FewUsersCollectionKeys = new ObservableCollection<FileDetails>(
@@ -77,18 +126,31 @@ namespace DocumentSavingProject.ViewModel
         {
             if (SelectedFile != null)
             {
+                // Update the list of users for the selected file
                 var users = FewUsersCollection
                     .Where(d => d.ContainsKey(SelectedFile))
                     .SelectMany(d => d[SelectedFile])
                     .ToList();
 
                 SelectedFileUsers = new ObservableCollection<FileUser>(users);
+
+                // Check if a user was previously selected for this file
+                if (FileUserSelections.ContainsKey(SelectedFile))
+                {
+                    SelectedFileUser = FileUserSelections[SelectedFile];
+                }
+                else
+                {
+                    SelectedFileUser = null;
+                }
             }
             else
             {
                 SelectedFileUsers.Clear();
+                SelectedFileUser = null;
             }
         }
+
 
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {

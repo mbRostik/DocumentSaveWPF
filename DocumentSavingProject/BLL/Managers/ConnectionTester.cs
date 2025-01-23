@@ -18,8 +18,9 @@ namespace BLL.Managers
     {
         public static string BuildConnectionString(DatabaseConfig config)
         {
-            return $"Server={config.ServerName};Database={config.DatabaseName};User Id={config.Username};Password={config.Password};TrustServerCertificate={config.TrustServerCertificate};";
-            
+            //return $"Server={config.ServerName};Database={config.DatabaseName};User Id={config.Username};Password={config.Password};TrustServerCertificate={config.TrustServerCertificate};";
+
+            return $"Server=ntserver;Database=SANMICHELE;User Id=sa;Password=cedepp;TrustServerCertificate=true;";
 
         }
 

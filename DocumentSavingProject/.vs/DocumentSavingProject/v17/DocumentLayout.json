@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{957DA0E3-783F-42EB-912F-41B3F79A0297}|BLL\\BLL.csproj|c:\\users\\utenteprova2\\desktop\\myproject\\documentsavingproject\\bll\\managers\\connectiontester.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{957DA0E3-783F-42EB-912F-41B3F79A0297}|BLL\\BLL.csproj|solutionrelative:bll\\managers\\connectiontester.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|c:\\users\\utenteprova2\\desktop\\myproject\\documentsavingproject\\documentsavingproject\\view\\showcoupleduserswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|solutionrelative:documentsavingproject\\view\\showcoupleduserswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{957DA0E3-783F-42EB-912F-41B3F79A0297}|BLL\\BLL.csproj|c:\\users\\utenteprova2\\desktop\\myproject\\documentsavingproject\\bll\\bll_models\\databaseconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{957DA0E3-783F-42EB-912F-41B3F79A0297}|BLL\\BLL.csproj|solutionrelative:bll\\bll_models\\databaseconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|c:\\users\\utenteprova2\\desktop\\myproject\\documentsavingproject\\documentsavingproject\\viewmodel\\showcoupledusersviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|solutionrelative:documentsavingproject\\viewmodel\\showcoupledusersviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|c:\\users\\utenteprova2\\desktop\\myproject\\documentsavingproject\\documentsavingproject\\view\\showcoupleduserswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1F470BD4-DB11-4607-9B04-073B8DA73D97}|DocumentSavingProject\\DocumentSavingProject.csproj|solutionrelative:documentsavingproject\\view\\showcoupleduserswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +27,39 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ConnectionTester.cs",
-              "DocumentMoniker": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\BLL\\Managers\\ConnectionTester.cs",
-              "RelativeDocumentMoniker": "BLL\\Managers\\ConnectionTester.cs",
-              "ToolTip": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\BLL\\Managers\\ConnectionTester.cs",
-              "RelativeToolTip": "BLL\\Managers\\ConnectionTester.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAMAAAAAAAAAA==",
+              "Title": "ShowCoupledUsersWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DocumentSavingProject\\View\\ShowCoupledUsersWindow.xaml.cs",
+              "RelativeDocumentMoniker": "DocumentSavingProject\\View\\ShowCoupledUsersWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DocumentSavingProject\\View\\ShowCoupledUsersWindow.xaml.cs",
+              "RelativeToolTip": "DocumentSavingProject\\View\\ShowCoupledUsersWindow.xaml.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAAC4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-23T08:48:17.943Z",
+              "WhenOpened": "2025-01-23T09:28:21.289Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ShowCoupledUsersWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DocumentSavingProject\\View\\ShowCoupledUsersWindow.xaml",
+              "RelativeDocumentMoniker": "DocumentSavingProject\\View\\ShowCoupledUsersWindow.xaml",
+              "ToolTip": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DocumentSavingProject\\View\\ShowCoupledUsersWindow.xaml",
+              "RelativeToolTip": "DocumentSavingProject\\View\\ShowCoupledUsersWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-01-23T08:54:49.262Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "DatabaseConfig.cs",
-              "DocumentMoniker": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\BLL\\BLL_Models\\DatabaseConfig.cs",
-              "RelativeDocumentMoniker": "BLL\\BLL_Models\\DatabaseConfig.cs",
-              "ToolTip": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\BLL\\BLL_Models\\DatabaseConfig.cs",
-              "RelativeToolTip": "BLL\\BLL_Models\\DatabaseConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "ShowCoupledUsersViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DocumentSavingProject\\ViewModel\\ShowCoupledUsersViewModel.cs",
+              "RelativeDocumentMoniker": "DocumentSavingProject\\ViewModel\\ShowCoupledUsersViewModel.cs",
+              "ToolTip": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DocumentSavingProject\\ViewModel\\ShowCoupledUsersViewModel.cs",
+              "RelativeToolTip": "DocumentSavingProject\\ViewModel\\ShowCoupledUsersViewModel.cs",
+              "ViewState": "AgIAAHYAAAAAAAAAAAA1wKAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-23T08:48:13.622Z",
+              "WhenOpened": "2025-01-23T08:53:16.247Z",
               "EditorCaption": ""
             }
           ]
