@@ -1,5 +1,4 @@
 C:\Users\utenteprova2\Desktop\Test\2.0\DocumentSavingProject.pdb
-C:\Users\utenteprova2\Desktop\Test\2.0\Images\icon.ico
 C:\Users\utenteprova2\Desktop\Test\2.0\D3DCompiler_47_cor3.dll
 C:\Users\utenteprova2\Desktop\Test\2.0\PenImc_cor3.dll
 C:\Users\utenteprova2\Desktop\Test\2.0\PresentationNative_cor3.dll

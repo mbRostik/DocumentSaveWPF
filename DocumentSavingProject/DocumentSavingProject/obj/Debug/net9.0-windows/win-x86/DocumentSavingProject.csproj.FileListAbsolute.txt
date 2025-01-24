@@ -1,4 +1,3 @@
-C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProject\bin\Debug\net9.0-windows\win-x86\Images\icon.ico
 C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProject\bin\Debug\net9.0-windows\win-x86\DocumentSavingProject.exe
 C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProject\bin\Debug\net9.0-windows\win-x86\DocumentSavingProject.deps.json
 C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProject\bin\Debug\net9.0-windows\win-x86\DocumentSavingProject.runtimeconfig.json
@@ -613,7 +612,6 @@ C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProj
 C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProject\obj\Debug\net9.0-windows\win-x86\View\MoveFilesView.g.cs
 C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProject\obj\Debug\net9.0-windows\win-x86\View\ShowCoupledUsersWindow.g.cs
 C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProject\obj\Debug\net9.0-windows\win-x86\App.g.cs
-C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProject\obj\Debug\net9.0-windows\win-x86\DocumentSavingProject_Content.g.cs
 C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProject\obj\Debug\net9.0-windows\win-x86\GeneratedInternalTypeHelper.g.cs
 C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProject\obj\Debug\net9.0-windows\win-x86\DocumentSavingProject_MarkupCompile.cache
 C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProject\obj\Debug\net9.0-windows\win-x86\DocumentSavingProject_MarkupCompile.lref
@@ -634,3 +632,5 @@ C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProj
 C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProject\obj\Debug\net9.0-windows\win-x86\DocumentSavingProject.pdb
 C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProject\obj\Debug\net9.0-windows\win-x86\DocumentSavingProject.genruntimeconfig.cache
 C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProject\obj\Debug\net9.0-windows\win-x86\ref\DocumentSavingProject.dll
+C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProject\obj\Debug\net9.0-windows\win-x86\DocumentSavingProject_Content.g.cs
+C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProject\bin\Debug\net9.0-windows\win-x86\Images\icon.ico

@@ -178,4 +178,3 @@ C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProj
 C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProject\obj\Release\net9.0-windows\View\ShowCoupledUsersWindow.g.cs
 C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProject\obj\Release\net9.0-windows\View\ShowCoupledUsersWindow.baml
 C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProject\obj\Release\net9.0-windows\DocumentSavingProject_Content.g.cs
-C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProject\bin\Release\net9.0-windows\Images\icon.ico

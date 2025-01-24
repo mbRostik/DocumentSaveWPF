@@ -1,5 +1,6 @@
 ﻿using System.Configuration;
 using System.Data;
+using System.IO;
 using System.Windows;
 using BLL.BLL_Models;
 using BLL.Managers;
@@ -21,7 +22,9 @@ namespace DocumentSavingProject
 
         private void OnStartup(object sender, StartupEventArgs e)
         {
-            _host = Host.CreateDefaultBuilder()
+            try
+            {
+                _host = Host.CreateDefaultBuilder()
                 .ConfigureServices((hostBuilderContext, serviceCollection) =>
                 {
                     serviceCollection.AddDbContext<DataBaseContext>(options =>
@@ -40,11 +43,20 @@ namespace DocumentSavingProject
                 })
                 .Build();
 
-            _host.Start();
+                _host.Start();
 
-            var mainWindow = _host.Services.GetRequiredService<MainWindow>();
-            MainWindow = mainWindow;
-            mainWindow.Show();
+                var mainWindow = _host.Services.GetRequiredService<MainWindow>();
+                MainWindow = mainWindow;
+                mainWindow.Show();
+            }
+            catch(Exception ex)
+            {
+                string logFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "error_log.txt");
+
+                File.AppendAllText(logFilePath, $"[{DateTime.Now}] {ex.Message}{Environment.NewLine}{ex.StackTrace}{Environment.NewLine}{Environment.NewLine}");
+
+                MessageBox.Show("An unexpected error occurred. Please check the error log for details.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         protected override async void OnExit(ExitEventArgs e)

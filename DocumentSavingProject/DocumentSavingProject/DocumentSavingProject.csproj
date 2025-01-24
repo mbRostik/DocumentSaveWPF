@@ -6,20 +6,16 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
-	  <ApplicationIcon>Images\icon.ico</ApplicationIcon>
+    <ApplicationIcon>Images\icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Images\back.png" />
     <None Remove="Images\cancel.gif" />
     <None Remove="Images\remove.gif" />
+    <None Remove="Images\WindowIcon.ico" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Content Include="Images\icon.ico">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
@@ -48,10 +44,15 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\cancel.gif" />
-    <Resource Include="Images\icon.ico">
+    <Content Include="Images\icon.ico">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Images\remove.gif">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\remove.gif" />
+    <Resource Include="Images\WindowIcon.ico">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

@@ -7,7 +7,7 @@
         xmlns:converters="clr-namespace:DocumentSavingProject.Converters"
         mc:Ignorable="d"
         Title="Main Menu" Height="450" Width="800"
-        Icon="pack://application:,,,/Images/icon.ico"
+        Icon="pack://application:,,,/Images/WindowIcon.ico"
         WindowStartupLocation="Manual"
         Background="#E3F2FD">
     <Window.Resources>
