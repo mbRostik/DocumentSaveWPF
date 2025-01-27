@@ -24,7 +24,6 @@ namespace DocumentSavingProject
                 this.Width = StaticInfo.Width;
                 this.Height = StaticInfo.Height;
             }
-
         }
 
         private void OpenAddDatabaseView(object sender, RoutedEventArgs e)
@@ -48,7 +47,7 @@ namespace DocumentSavingProject
             this.Hide();
 
         }
-        private void OpenMoveFilesView(object sender, RoutedEventArgs e)
+        public void OpenMoveFilesView(object sender = null, RoutedEventArgs e=null)
         {
             bool isMaximized = this.WindowState == WindowState.Maximized;
             var moveFilesView = _serviceProvider.GetRequiredService<MoveFilesView>();

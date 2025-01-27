@@ -146,34 +146,89 @@ namespace DocumentSavingProject.ViewModel
 
                         using (var transaction = connection.BeginTransaction())
                         {
-                            const string insertQuery = @"
-                    INSERT INTO DOCUMENTO_UPLOAD (ENTE, ANNO, MESE, SUBMESE, [FILE], FILENAME, EXTENSION, DENOMINAZIONE) OUTPUT INSERTED.ID
-                    VALUES (@ENTE, @ANNO, @MESE, @SUBMESE, @FILE, @FILENAME, @EXTENSION, @DENOMINAZIONE)"
-                            ;
 
-                            string Descritption = item.Value.Name + ' ' + item.Value.SurName + ' ' + item.Key.Month + ' ' + item.Key.Year;
+                            const string getFirstRecordQuery = @"
+                            SELECT TOP 1 
+                                DOCUMENTO_UPLOAD_DIPENDENTE.ID, 
+                                DOCUMENTO_UPLOAD_DIPENDENTE.DIPENDENTE 
+                            FROM DOCUMENTO_UPLOAD_DIPENDENTE
+                            INNER JOIN DOCUMENTO_UPLOAD 
+                                ON DOCUMENTO_UPLOAD_DIPENDENTE.ID = DOCUMENTO_UPLOAD.ID
+                            INNER JOIN ANAGDIP 
+                                ON DOCUMENTO_UPLOAD_DIPENDENTE.DIPENDENTE = ANAGDIP.PROGRESSIVO
+                            WHERE DOCUMENTO_UPLOAD.FILENAME = @FILENAME 
+                              AND DOCUMENTO_UPLOAD.ANNO = @ANNO 
+                              AND DOCUMENTO_UPLOAD.MESE = @MESE 
+                              AND DOCUMENTO_UPLOAD.EXTENSION = @EXTENSION 
+                              AND DOCUMENTO_UPLOAD.ENTE = @ENTE 
+                              AND ANAGDIP.PROGRESSIVO = @PROGRESSIVO";
 
-                            var insertedRecordId = await connection.QuerySingleOrDefaultAsync<int>(insertQuery, new
+                            var firstRecord = await connection.QueryFirstOrDefaultAsync<(int ID, int DIPENDENTE)>(getFirstRecordQuery, new
                             {
-                                ENTE = item.Value.ENTE,
+                                FILENAME = item.Key.FileName,
                                 ANNO = item.Key.Year,
                                 MESE = item.Key.Month,
-                                SUBMESE = (int?)null,
-                                FILE = item.Key.Data,
-                                FILENAME = item.Key.FileName,
                                 EXTENSION = item.Key.FileExtension,
-                                DENOMINAZIONE = Descritption
+                                ENTE = item.Value.ENTE,
+                                PROGRESSIVO = item.Value.PROGRESSIVO
                             }, transaction);
 
-                            const string insertLinkTableQuery = @"
-                        INSERT INTO DOCUMENTO_UPLOAD_DIPENDENTE (ID, DIPENDENTE)
-                        VALUES (@ID, @DIPENDENTE)";
-
-                            await connection.ExecuteAsync(insertLinkTableQuery, new
+                            if (firstRecord==default)
                             {
-                                ID = insertedRecordId,
-                                DIPENDENTE = item.Value.PROGRESSIVO
-                            }, transaction);
+                                const string insertQuery = @"
+                                INSERT INTO DOCUMENTO_UPLOAD (ENTE, ANNO, MESE, SUBMESE, [FILE], FILENAME, EXTENSION, DENOMINAZIONE) OUTPUT INSERTED.ID
+                                VALUES (@ENTE, @ANNO, @MESE, @SUBMESE, @FILE, @FILENAME, @EXTENSION, @DENOMINAZIONE)"
+                                        ;
+
+                                string Descritption = item.Value.Name + ' ' + item.Value.SurName + ' ' + item.Key.Month + ' ' + item.Key.Year;
+
+                                var insertedRecordId = await connection.QuerySingleOrDefaultAsync<int>(insertQuery, new
+                                {
+                                    ENTE = item.Value.ENTE,
+                                    ANNO = item.Key.Year,
+                                    MESE = item.Key.Month,
+                                    SUBMESE = (int?)null,
+                                    FILE = item.Key.Data,
+                                    FILENAME = item.Key.FileName,
+                                    EXTENSION = item.Key.FileExtension,
+                                    DENOMINAZIONE = Descritption
+                                }, transaction);
+
+                                const string insertLinkTableQuery = @"
+                                INSERT INTO DOCUMENTO_UPLOAD_DIPENDENTE (ID, DIPENDENTE)
+                                VALUES (@ID, @DIPENDENTE)";
+
+                                await connection.ExecuteAsync(insertLinkTableQuery, new
+                                {
+                                    ID = insertedRecordId,
+                                    DIPENDENTE = item.Value.PROGRESSIVO
+                                }, transaction);
+                            }
+                            else
+                            {
+                                string Descritption = item.Value.Name + ' ' + item.Value.SurName + ' ' + item.Key.Month + ' ' + item.Key.Year;
+                                const string updateQuery = @"
+                            UPDATE DOCUMENTO_UPLOAD
+                            SET 
+                                SUBMESE = @SUBMESE,
+                                [FILE] = @FILE,
+                                DENOMINAZIONE = @DENOMINAZIONE
+                            WHERE ID=@ID";
+
+                                await connection.ExecuteAsync(updateQuery, new
+                                {
+                                    ENTE = item.Value.ENTE,
+                                    SUBMESE = (int?)null,
+                                    FILE = item.Key.Data,
+                                    DENOMINAZIONE = Descritption,
+                                    FILENAME = item.Key.FileName,
+                                    ANNO = item.Key.Year,
+                                    MESE = item.Key.Month,
+                                    EXTENSION = item.Key.FileExtension,
+                                    ID = firstRecord.ID
+                                }, transaction);
+                            }
+                           
 
                             transaction.Commit();
 
@@ -193,7 +248,6 @@ namespace DocumentSavingProject.ViewModel
             {
                 if (SelectedFileUser != null)
                 {
-                    // Add or update the selected user for the file
                     if (FileUserSelections.ContainsKey(SelectedFile))
                     {
                         FileUserSelections[SelectedFile] = SelectedFileUser;
@@ -203,7 +257,6 @@ namespace DocumentSavingProject.ViewModel
                         FileUserSelections.Add(SelectedFile, SelectedFileUser);
                     }
 
-                    // Set IsUserSelected to true
                     SelectedFile.IsUserSelected = true;
                 }
             }
@@ -224,7 +277,6 @@ namespace DocumentSavingProject.ViewModel
         {
             if (SelectedFile != null)
             {
-                // Update the list of users for the selected file
                 var users = FewUsersCollection
                     .Where(d => d.ContainsKey(SelectedFile))
                     .SelectMany(d => d[SelectedFile])
@@ -232,13 +284,13 @@ namespace DocumentSavingProject.ViewModel
 
                 SelectedFileUsers = new ObservableCollection<FileUser>(users);
 
-                // Check if a user was previously selected for this file
                 if (FileUserSelections.ContainsKey(SelectedFile))
                 {
                     SelectedFileUser = FileUserSelections[SelectedFile];
                 }
                 else
                 {
+                    SelectedFile.IsUserSelected = false;
                     SelectedFileUser = null;
                 }
             }

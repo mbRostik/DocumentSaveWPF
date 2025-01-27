@@ -8,36 +8,52 @@
         mc:Ignorable="d"
         Title="Main Menu" Height="450" Width="800"
         Icon="pack://application:,,,/Images/WindowIcon.ico"
-        WindowStartupLocation="Manual"
+        WindowStartupLocation="CenterScreen"
         Background="#E3F2FD">
     <Window.Resources>
         <converters:StringToVisibilityConverter x:Key="StringToVisibilityConverter" />
         <Style x:Key="ModernButtonStyle" TargetType="Button">
-            <Setter Property="Background" Value="#007ACC" />
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#007ACC" Offset="0" />
+                        <GradientStop Color="#005A9E" Offset="1" />
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
             <Setter Property="Foreground" Value="White" />
-            <Setter Property="FontWeight" Value="Normal" />
-            <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="FontSize" Value="16" />
             <Setter Property="Padding" Value="10,5" />
             <Setter Property="BorderThickness" Value="0" />
             <Setter Property="Margin" Value="10" />
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="Black" Opacity="0.3" ShadowDepth="3" />
+                </Setter.Value>
+            </Setter>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Border Background="{TemplateBinding Background}"
                                 CornerRadius="2">
-                            <Border Padding="{TemplateBinding Padding}">
-                                <ContentPresenter HorizontalAlignment="Center"
-                                                  VerticalAlignment="Center" />
-                            </Border>
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center" />
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#005A9E" />
+                    <Setter Property="Background">
+                        <Setter.Value>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                <GradientStop Color="#005A9E" Offset="0" />
+                                <GradientStop Color="#003F73" Offset="1" />
+                            </LinearGradientBrush>
+                        </Setter.Value>
+                    </Setter>
                     <Setter Property="Cursor" Value="Hand" />
-
                 </Trigger>
                 <Trigger Property="IsPressed" Value="True">
                     <Setter Property="Background" Value="#003F73" />
@@ -47,21 +63,33 @@
     </Window.Resources>
 
     <Grid Margin="20">
-        <Border Background="White" CornerRadius="5" Padding="20" BorderBrush="#007ACC" BorderThickness="2">
+        <Border Background="White" CornerRadius="10" Padding="30" BorderBrush="#007ACC" BorderThickness="2">
+            <Border.Effect>
+                <DropShadowEffect Color="Black" Opacity="0.3" ShadowDepth="5" BlurRadius="10" />
+            </Border.Effect>
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                 <!-- Header -->
-                <TextBlock Text="Main Menu" FontSize="24" FontWeight="Bold" Foreground="#007ACC" Margin="0,0,0,20" HorizontalAlignment="Center" />
+                <TextBlock Text="Main Menu"
+           FontSize="28"
+           FontWeight="Bold"
+           Foreground="#007ACC"
+           TextAlignment="Center">
+                    <TextBlock.Effect>
+                        <DropShadowEffect Color="Black" Opacity="0.5" ShadowDepth="2" BlurRadius="5" />
+                    </TextBlock.Effect>
+                </TextBlock>
+
 
                 <!-- Open Add Database View -->
-                <Button Content="Make a DataBase connection"
-                        Width="200"
+                <Button Content="Make a Database Connection"
+                        Width="250"
                         Height="50"
                         Click="OpenAddDatabaseView"
                         Style="{StaticResource ModernButtonStyle}" />
 
                 <!-- Open Move Files View -->
-                <Button Content="Save files in the DB"
-                        Width="200"
+                <Button Content="Save Files in the DB"
+                        Width="250"
                         Height="50"
                         Click="OpenMoveFilesView"
                         Visibility="{Binding CurrentConnectionString, Converter={StaticResource StringToVisibilityConverter}}"
@@ -69,7 +97,7 @@
 
                 <!-- Exit Button -->
                 <Button Content="Exit"
-                        Width="200"
+                        Width="250"
                         Height="50"
                         Click="ExitApplication"
                         Style="{StaticResource ModernButtonStyle}" />

@@ -12,5 +12,7 @@ namespace BLL.BLL_Models
         public string Name { get; set; }
         public string SurName { get; set; }
         public int PROGRESSIVO { get; set; }
+
+        public string CODFISC { get; set; } = null;
     }
 }

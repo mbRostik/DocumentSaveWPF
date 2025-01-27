@@ -5,9 +5,12 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using BLL.BLL_Models;
 using BLL.Managers;
 using CommunityToolkit.Mvvm.Input;
+using DocumentSavingProject.Helpers;
+using DocumentSavingProject.View;
 
 namespace DocumentSavingProject.ViewModel
 {
@@ -91,7 +94,8 @@ namespace DocumentSavingProject.ViewModel
 
             if (await ConnectionTester.TestConnectionAsync(connectionString, _serviceProvider, config))
             {
-                StatusMessage = "Connection successful!";
+                Helper.CloseExternalWindow<DBConnectionView>();
+                Application.Current.Windows.OfType<MainWindow>().FirstOrDefault().OpenMoveFilesView();
             }
             else
             {

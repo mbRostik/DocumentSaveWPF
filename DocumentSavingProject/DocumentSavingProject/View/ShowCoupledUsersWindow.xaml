@@ -35,7 +35,6 @@ xmlns:converters="clr-namespace:DocumentSavingProject.Converters"
                TextWrapping="Wrap" />
         </Border>
 
-        <!-- Main Content Grid -->
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*" />
@@ -43,12 +42,10 @@ xmlns:converters="clr-namespace:DocumentSavingProject.Converters"
                 <ColumnDefinition Width="0.5*" />
             </Grid.ColumnDefinitions>
 
-            <!-- Left Column Header -->
             <TextBlock Grid.Column="0" Text="Files" 
                        FontSize="14" FontWeight="Bold" Foreground="#007ACC"
                        HorizontalAlignment="Center" Margin="0,0,0,2" />
 
-            <!-- Left Column: Files -->
             <Border Grid.Column="0" BorderBrush="#007ACC" BorderThickness="1" CornerRadius="2" Margin="10,30,10,10">
                 <ListBox ItemsSource="{Binding FewUsersCollectionKeys}" 
          SelectedItem="{Binding SelectedFile, Mode=TwoWay}" 
@@ -80,12 +77,10 @@ xmlns:converters="clr-namespace:DocumentSavingProject.Converters"
                 </ListBox>
             </Border>
 
-            <!-- Right Column Header -->
             <TextBlock Grid.Column="1" Text="Users" 
                        FontSize="14" FontWeight="Bold" Foreground="#007ACC"
                        HorizontalAlignment="Center" Margin="0,0,0,2" />
 
-            <!-- Right Column: Users -->
             <Border Grid.Column="1" BorderBrush="#007ACC" BorderThickness="1" CornerRadius="2" Margin="10,30,10,10">
                 <ListBox ItemsSource="{Binding SelectedFileUsers}" 
                          SelectedItem="{Binding SelectedFileUser, Mode=TwoWay}" 
@@ -124,10 +119,18 @@ xmlns:converters="clr-namespace:DocumentSavingProject.Converters"
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                                 <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch">
-                                    <TextBlock Text="{Binding Name}" FontWeight="Bold" Margin="10,0,0,0" />
-                                    <TextBlock Text="{Binding SurName}" Margin="10,0,0,0" />
+                                    <TextBlock Text="{Binding SurName, StringFormat='{}{0} {1}'}" Margin="10,0,0,0">
+                                        <TextBlock.Inlines>
+                                            <Run Text="{Binding SurName}" FontWeight="Bold" />
+                                            <Run Text="" />
+                                            <Run Text="{Binding Name}"  FontWeight="Bold" />
+                                        </TextBlock.Inlines>
+                                    </TextBlock>
+                                    <TextBlock Text="{Binding CODFISC}" Margin="10,0,0,0" />
                                     <TextBlock Text="{Binding PROGRESSIVO}" Margin="10,0,0,0" />
+                                    
                                 </StackPanel>
+
                                 <Button Width="20" 
                                         Height="20" 
                                         Margin="10,0,0,0" 
@@ -177,7 +180,6 @@ xmlns:converters="clr-namespace:DocumentSavingProject.Converters"
                 </ListBox>
             </Border>
 
-            <!-- Save Button -->
             <Border Grid.Column="2" BorderThickness="0" CornerRadius="2">
                 <Button Content="Save" Command="{Binding ConfirmUserListCommand}" 
                         Height="50"

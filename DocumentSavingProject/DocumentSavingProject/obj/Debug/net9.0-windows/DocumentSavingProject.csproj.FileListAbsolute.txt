@@ -178,4 +178,3 @@ C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProj
 C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProject\obj\Debug\net9.0-windows\DocumentSavingProject.genruntimeconfig.cache
 C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProject\obj\Debug\net9.0-windows\ref\DocumentSavingProject.dll
 C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProject\obj\Debug\net9.0-windows\DocumentSavingProject_Content.g.cs
-C:\Users\utenteprova2\Desktop\MyProject\DocumentSavingProject\DocumentSavingProject\bin\Debug\net9.0-windows\Images\icon.ico
