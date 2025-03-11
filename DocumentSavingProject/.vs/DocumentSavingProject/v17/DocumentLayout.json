@@ -36,7 +36,7 @@
               "RelativeDocumentMoniker": "DocumentSavingProject\\ViewModel\\AddDatabaseViewModel.cs",
               "ToolTip": "C:\\Users\\utenteprova2\\Desktop\\MyProject\\DocumentSavingProject\\DocumentSavingProject\\ViewModel\\AddDatabaseViewModel.cs",
               "RelativeToolTip": "DocumentSavingProject\\ViewModel\\AddDatabaseViewModel.cs",
-              "ViewState": "AgIAAFAAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-27T08:29:41.943Z",
               "EditorCaption": ""
@@ -51,8 +51,7 @@
               "RelativeToolTip": "DocumentSavingProject\\ViewModel\\MainWindowViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-27T08:29:40.239Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-27T08:29:40.239Z"
             },
             {
               "$type": "Document",
@@ -64,8 +63,7 @@
               "RelativeToolTip": "DocumentSavingProject\\View\\MoveFilesView.xaml.cs",
               "ViewState": "AgIAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-27T08:28:00.803Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-27T08:28:00.803Z"
             },
             {
               "$type": "Document",
@@ -77,8 +75,7 @@
               "RelativeToolTip": "BLL\\Managers\\ConnectionTester.cs",
               "ViewState": "AgIAAEEAAAAAAAAAAAAIwEMAAABUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-27T08:21:37.097Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-27T08:21:37.097Z"
             }
           ]
         },
